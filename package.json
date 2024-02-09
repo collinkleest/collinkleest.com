@@ -1,0 +1,77 @@
+{
+  "name": "collinkleest.com",
+  "version": "0.0.1",
+  "description": "Personal Portfolio Website for Collin Kleest",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "commit": "cz",
+    "release": "standard-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collinkleest/collinkleest.com.git"
+  },
+  "keywords": [
+    "portfolio",
+    "collin",
+    "kleest",
+    "nextjs",
+    "tailwind"
+  ],
+  "author": "Collin Kleest <collinkleest@gmail.com> (https://collinkleest.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/collinkleest/collinkleest.com/issues",
+    "email": "collinkleest@gmail.com"
+  },
+  "homepage": "https://github.com/collinkleest/collinkleest.com#readme",
+  "engines": {
+    "node": ">=18.7"
+  },
+  "dependencies": {
+    "next": "14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "14.2.1",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.55",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "9.1.0",
+    "husky": "9.0.10",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "standard-version": "9.5.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  }
+}
