@@ -1,5 +1,9 @@
 # collinkleest.com
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/collinkleest/collinkleest.com/ci.yaml)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fcollinkleest.app)
+![GitHub Release](https://img.shields.io/github/v/release/collinkleest/collinkleest.com)
+
 Personal Portfolio Website for Collin Kleest.
 
 This portfolio site is built in [Next.js](https://nextjs.org/) and is generated into a static site via next.
