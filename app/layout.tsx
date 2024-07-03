@@ -1,3 +1,4 @@
+import Header from './_components'
 // These styles apply to every route in the application
 import './global.css'
 
@@ -8,7 +9,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
