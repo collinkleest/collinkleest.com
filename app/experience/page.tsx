@@ -6,7 +6,6 @@ export default function Page() {
   return (
     <div className="container mx-auto py-4 font-mono">
       <h1 className="font-bold text-2xl  my-2">Experience</h1>
-
       {content.experience.experienceBlocks.map(
         (experienceBlock: IExperienceBlock) => {
           return (
@@ -20,8 +19,9 @@ export default function Page() {
               {experienceBlock.roles.map((role: IExperienceRole) => {
                 return (
                   <Fragment key={role.roleTitle}>
-                    <p className="text-sm text-slate-500">{role.roleTitle}</p>
-                    <ul className="list-disc list-inside">
+                    <p className="text-sm font-bold">{role.roleTitle}</p>
+                    <p className="text-sm italic">{role.roleBlurb}</p>
+                    <ul className="ml-3 list-disc list-inside">
                       {role.roleBullets.map(
                         (roleBullet: string, index: number) => {
                           return (

@@ -11,6 +11,7 @@ export interface IHeader {
 
 export interface IExperienceRole {
   roleTitle: string
+  roleBlurb?: string
   roleBullets: string[]
 }
 

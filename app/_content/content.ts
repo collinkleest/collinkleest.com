@@ -1,40 +1,10 @@
 import { IContent } from '../_types'
+import { experience } from './experience'
+import { header } from './header'
 
 const content: IContent = {
-  header: {
-    logoText: 'Collin Kleest',
-    logoHref: '/',
-    navLinks: [
-      {
-        text: 'About',
-        href: '/about'
-      },
-      {
-        text: 'Experience',
-        href: '/experience'
-      },
-      {
-        text: 'Projects',
-        href: '/projects'
-      },
-      {
-        text: 'Resume',
-        href: '/resume'
-      }
-    ]
-  },
-  experience: {
-    title: 'Experience',
-    experienceBlocks: [
-      {
-        companyName: 'Vanguard',
-        timeline: 'Aug 2021 - Present',
-        roles: [
-          { roleTitle: 'Tech Lead', roleBullets: ['Leading Software Team'] }
-        ]
-      }
-    ]
-  }
+  header: header,
+  experience: experience
 }
 
 export default content
