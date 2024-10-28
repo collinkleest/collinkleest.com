@@ -5,10 +5,6 @@ export const header: IHeader = {
   logoHref: '/',
   navLinks: [
     {
-      text: 'About',
-      href: '/about'
-    },
-    {
       text: 'Experience',
       href: '/experience'
     },
