@@ -2,10 +2,12 @@ import { Fragment } from 'react'
 import content from '../_content/content'
 import { IExperienceBlock, IExperienceRole } from '../_types'
 
+export { experienceMetadata as metadata } from '../_content'
+
 export default function Page() {
   return (
     <div className="container mx-auto py-4 font-mono">
-      <h1 className="font-bold text-2xl  my-2">Experience</h1>
+      <h1 className="font-bold text-2xl my-2">Experience</h1>
       {content.experience.experienceBlocks.map(
         (experienceBlock: IExperienceBlock) => {
           return (

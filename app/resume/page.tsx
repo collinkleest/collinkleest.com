@@ -1,3 +1,5 @@
+export { resumeMetadata as metadata } from '../_content'
+
 export default function Page() {
-  return <h1>Resume!</h1>
+  return <div>Resume</div>
 }
