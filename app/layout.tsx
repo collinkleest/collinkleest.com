@@ -1,9 +1,14 @@
-import { Provider } from '@/ui/provider'
+import { Provider } from './provider'
 import Header from './_components'
 // These styles apply to every route in the application
 import './global.css'
-
+import { Inter } from 'next/font/google'
 export { metadata } from './_content'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export default function RootLayout({
   children
@@ -11,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className={inter.className} lang="en" suppressHydrationWarning>
       <body>
         <Provider>
           <Header />

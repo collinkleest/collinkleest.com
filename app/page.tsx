@@ -1,3 +1,5 @@
+import { Timeline } from './_components/experience'
+
 export default function Page() {
-  return <h1>Hello World</h1>
+  return <Timeline />
 }
