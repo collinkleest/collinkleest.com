@@ -67,22 +67,6 @@ $ pnpm build
 
 This will create a production build in static files out of the directory `out`.
 
-### Testing
-
-This app uses [jest](https://jestjs.io/) for unit testing, all tests can be found in the `__tests__` directory.
-
-To run the apps test use the following command
-
-```bash
-$ pnpm test
-```
-
-To run the apps tests and watch for any changes to the tests and hot reload use the following command
-
-```bash
-$ pnpm test:watch
-```
-
 ### Linting
 
 This project uses [eslint](https://eslint.org/) for linting.
