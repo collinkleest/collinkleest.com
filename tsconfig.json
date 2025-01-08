@@ -19,7 +19,7 @@
     ],
     "target": "ESNext",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./components/*"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
