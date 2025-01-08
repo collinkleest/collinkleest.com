@@ -11,9 +11,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
+      <body className="bg-slate-950">
+        <div className="container mx-auto text-slate-300">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   )

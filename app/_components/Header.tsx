@@ -1,10 +1,12 @@
 'use client'
 import { Menu } from '@mui/icons-material'
 import content from '../_content/'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { usePathname } from 'next/navigation'
+import { Component } from 'react'
+import { ReactElement } from 'react'
 
-export default function Header() {
+const Header = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -14,7 +16,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="bg-slate-800 p-4 flex items-center sticky w-full justify-between flex-wrap t-0 z-10 font-mono">
+      <nav className="bg-slate-950 border-b-2 p-4 flex items-center sticky w-full justify-between flex-wrap t-0 z-10 font-mono">
         <a href={content.header.logoHref || '/'} className="text-slate-300">
           {content.header.logoText}
         </a>
@@ -41,3 +43,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header
