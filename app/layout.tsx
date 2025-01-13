@@ -2,7 +2,7 @@ import { Provider } from './provider'
 // These styles apply to every route in the application
 import './global.css'
 import { Inter } from 'next/font/google'
-import { Footer } from './_components'
+import { Footer, Header } from './_components'
 export { metadata } from './_content'
 
 const inter = Inter({
@@ -19,6 +19,7 @@ export default function RootLayout({
     <html className={inter.className} lang="en" suppressHydrationWarning>
       <body>
         <Provider>
+          <Header />
           {children}
           <Footer />
         </Provider>

@@ -7,11 +7,11 @@ export default function Page() {
   return (
     <>
       <Container>
-        <Box my={12}>
+        <Box id="about" my={12}>
           <Intro />
         </Box>
         <LinkList links={content.linkList.links} />
-        <Box my={12}>
+        <Box id="experience" my={12}>
           <Timeline />
         </Box>
       </Container>
