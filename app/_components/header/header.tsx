@@ -8,7 +8,8 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen)
-
+  // TODO: abstract into content and clean up
+  // TODO: add responsive mobile design
   return (
     <Box borderBottom={'1px solid #eaeaea'}>
       <Flex mx={60} align={'center'} justify={'center'} py={4}>
@@ -40,17 +41,17 @@ export const Header = () => {
                 </Text>
               </Button>
             </a>
-            <a href="#resume">
-              <Button size={'sm'} variant={'ghost'}>
-                <Text textStyle="sm" fontWeight={'bold'}>
-                  Resume
-                </Text>
-              </Button>
-            </a>
             <a href="#projects">
               <Button size={'sm'} variant={'ghost'}>
                 <Text textStyle="sm" fontWeight={'bold'}>
                   Projects
+                </Text>
+              </Button>
+            </a>
+            <a href="#resume">
+              <Button size={'sm'} variant={'ghost'}>
+                <Text textStyle="sm" fontWeight={'bold'}>
+                  Resume
                 </Text>
               </Button>
             </a>
