@@ -1,3 +1,4 @@
+import { IIntro } from './intro.types'
 import { IExperience } from './experience.types'
 
 export interface INavLink {
@@ -13,5 +14,6 @@ export interface IHeader {
 
 export interface IContent {
   header: IHeader
+  intro: IIntro
   experience: IExperience
 }

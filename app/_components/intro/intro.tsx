@@ -1,15 +1,16 @@
 import { GridItem, SimpleGrid } from '@chakra-ui/react'
 import { Headshot } from './headshot'
 import { Description } from './description'
+import content from '../../_content'
 
 export const Intro = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 4 }}>
       <GridItem colSpan={{ base: 1, md: 1 }}>
-        <Headshot />
+        <Headshot headshot={content.intro.headshot} />
       </GridItem>
       <GridItem colSpan={{ base: 1, md: 3 }}>
-        <Description />
+        <Description description={content.intro.description} />
       </GridItem>
     </SimpleGrid>
   )

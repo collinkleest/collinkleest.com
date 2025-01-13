@@ -1,13 +1,14 @@
 import { Image } from '@chakra-ui/react'
+import { IIntroHeadshot } from '../../_types'
 
-export const Headshot = () => {
+export const Headshot = (props: { headshot: IIntroHeadshot }) => {
   return (
     <Image
-      src="images/headshot.jpeg"
+      src={props.headshot.src}
       boxSize="250px"
       borderRadius="full"
       fit="cover"
-      alt="Collin Kleest Headshot"
+      alt={props.headshot.alt}
     />
   )
 }
