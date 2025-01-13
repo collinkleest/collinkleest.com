@@ -1,5 +1,6 @@
 import { IIntro } from './intro.types'
 import { IExperience } from './experience.types'
+import { ILinkList } from './links.types'
 
 export interface INavLink {
   text: string
@@ -16,4 +17,5 @@ export interface IContent {
   header: IHeader
   intro: IIntro
   experience: IExperience
+  linkList: ILinkList
 }

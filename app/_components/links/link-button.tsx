@@ -25,6 +25,7 @@ export const LinkButton = ({
 
   return (
     <Button
+      mx={2}
       size={size ?? 'xs'}
       onClick={() => handleClick(url)}
       variant={variant ?? 'outline'}>
