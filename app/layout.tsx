@@ -1,5 +1,4 @@
 import { Provider } from './provider'
-import Header from './_components'
 // These styles apply to every route in the application
 import './global.css'
 import { Inter } from 'next/font/google'
@@ -18,10 +17,7 @@ export default function RootLayout({
   return (
     <html className={inter.className} lang="en" suppressHydrationWarning>
       <body>
-        <Provider>
-          <Header />
-          {children}
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   )

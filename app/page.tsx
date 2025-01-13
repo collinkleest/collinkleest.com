@@ -1,5 +1,13 @@
-import { Timeline } from './_components/experience'
+import { Container } from '@chakra-ui/react'
+import { Header, Intro, Timeline } from './_components'
 
 export default function Page() {
-  return <Timeline />
+  return (
+    <>
+      <Container>
+        <Intro />
+        <Timeline />
+      </Container>
+    </>
+  )
 }
