@@ -1,7 +1,6 @@
 'use client'
 
 import {
-  Flex,
   Heading,
   Spinner,
   VStack,
@@ -12,32 +11,49 @@ import {
   CardTitle,
   SimpleGrid,
   CardDescription,
-  CardFooter
+  CardFooter,
+  Button,
+  Box,
+  Center,
+  Flex
 } from '@chakra-ui/react'
 import { IProjectDTO } from '../../_types'
 import { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
+import { langMappings, excludedProjects } from '../../_content'
 
 export const Projects = () => {
   const githubApi = 'https://api.github.com/users/collinkleest/repos'
   const [projects, setProjects] = useState<IProjectDTO[]>([])
+  const [visibleProjects, setVisibleProjects] = useState<IProjectDTO[]>([])
   const [loading, setLoading] = useState(true)
+
+  const showMoreProjects = () => {
+    const newVisibleProjects = projects.slice(
+      visibleProjects.length,
+      visibleProjects.length + 6
+    )
+    setVisibleProjects([...visibleProjects, ...newVisibleProjects])
+  }
 
   useEffect(() => {
     fetch(githubApi)
       .then((response) => response.json())
       .then((data) => {
-        const mappedProjects = data.map((repo) => {
-          return {
-            name: repo.name,
-            description: repo.description,
-            url: repo.html_url,
-            language: repo.language,
-            liveHomepage: repo.homepage
-          }
-        })
+        const mappedProjects = data
+          .filter((data) => !data.archived && !excludedProjects.has(data.name))
+          .map((repo) => {
+            return {
+              name: repo.name,
+              description: repo.description,
+              url: repo.html_url,
+              language: repo.language,
+              liveHomepage: repo.homepage
+            }
+          })
         setProjects(mappedProjects)
+        setVisibleProjects(mappedProjects.slice(0, 6))
         setLoading(false)
       })
   }, [])
@@ -53,12 +69,17 @@ export const Projects = () => {
           <Text>Loading...</Text>
         </VStack>
       )}
-      {!loading && projects && (
+      {!loading && visibleProjects && (
         <SimpleGrid columns={3} gap={10}>
-          {projects.map((project) => {
+          {visibleProjects.map((project) => {
             return (
               <Card.Root key={project.name}>
-                <CardHeader>{project.language}</CardHeader>
+                <CardHeader>
+                  <Flex gap={2} align={'center'}>
+                    {langMappings[project?.language?.toLowerCase()]}
+                    {project.language}
+                  </Flex>
+                </CardHeader>
                 <CardBody>
                   <CardTitle>{project.name}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
@@ -78,6 +99,17 @@ export const Projects = () => {
           })}
         </SimpleGrid>
       )}
+      {!loading &&
+        visibleProjects &&
+        visibleProjects.length !== projects.length && (
+          <Box my={4}>
+            <Center>
+              <Button onClick={showMoreProjects} variant={'subtle'}>
+                Show More
+              </Button>
+            </Center>
+          </Box>
+        )}
     </>
   )
 }
