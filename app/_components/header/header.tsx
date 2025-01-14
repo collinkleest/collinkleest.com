@@ -31,7 +31,7 @@ export const Header = () => {
           {isOpen && <CloseButton onClick={() => setIsOpen(false)} />}
         </Box>
         <Box display={{ base: 'none', md: 'block' }}>
-          <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
+          <Stack direction={{ base: 'column', md: 'row' }} gap={4}>
             <a href="#about">
               <Button size={'sm'} variant={'ghost'}>
                 <Text textStyle="sm" fontWeight={'bold'}>
@@ -66,7 +66,7 @@ export const Header = () => {
       </Flex>
       {isOpen && (
         <Box display={{ base: 'block', md: 'none' }}>
-          <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
+          <Stack direction={{ base: 'column', md: 'row' }}>
             <a href="#about">
               <Button size={'sm'} variant={'ghost'}>
                 <Text textStyle="sm" fontWeight={'bold'}>

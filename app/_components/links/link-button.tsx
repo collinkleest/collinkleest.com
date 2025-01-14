@@ -7,8 +7,9 @@ import { IconType } from 'react-icons'
 export interface LinkButtonProps {
   text: string
   url: string
-  variant?: string
-  size?: string
+  // TOOD: figure out types
+  variant?: 'outline' | 'solid' | 'ghost' | 'subtle' | 'surface' | 'plain'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   icon?: ReactElement<IconType>
 }
 
