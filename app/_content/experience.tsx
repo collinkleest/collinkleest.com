@@ -1,4 +1,4 @@
-import { Avatar } from 'app/_components'
+import { Avatar } from '../_components/'
 import { IExperience, IExperienceBlock } from '../_types'
 import { FaFileCode, FaServer } from 'react-icons/fa'
 
