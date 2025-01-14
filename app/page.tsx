@@ -15,11 +15,11 @@ export default function Page() {
         <Box id="experience" my={12}>
           <Timeline />
         </Box>
-        <Box id="projects" my={12}>
-          <Projects />
-        </Box>
         <Box id="resume" my={12}>
           <Resume />
+        </Box>
+        <Box id="projects" my={12}>
+          <Projects />
         </Box>
       </Container>
     </>
