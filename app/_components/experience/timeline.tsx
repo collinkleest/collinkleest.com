@@ -11,7 +11,8 @@ import {
 import { PiBooks } from 'react-icons/pi'
 import { experience } from '../../_content'
 import { IExperienceBlock, IExperienceRole } from '../../_types'
-import { Button, Heading, List } from '@chakra-ui/react'
+import { Avatar, Button, Heading, List } from '@chakra-ui/react'
+import { FaLinkedin, FaCode } from 'react-icons/fa'
 
 export const Timeline = () => {
   const openLinkedin = () => {
@@ -28,9 +29,7 @@ export const Timeline = () => {
           (block: IExperienceBlock, index: number) => {
             return (
               <TimelineItem key={index}>
-                <TimelineConnector>
-                  <PiBooks />
-                </TimelineConnector>
+                <TimelineConnector>{block.avatar}</TimelineConnector>
                 <TimelineContent>
                   <TimelineTitle>{block.companyName}</TimelineTitle>
                   <TimelineDescription>{block.timeline}</TimelineDescription>
@@ -39,7 +38,7 @@ export const Timeline = () => {
                       return (
                         <TimelineItem key={index}>
                           <TimelineConnector>
-                            <PiBooks />
+                            {role.avatar ?? <FaCode />}
                           </TimelineConnector>
                           <TimelineContent>
                             <TimelineTitle>{role.roleTitle}</TimelineTitle>
@@ -67,7 +66,7 @@ export const Timeline = () => {
         )}
         <TimelineItem>
           <TimelineConnector>
-            <PiBooks />
+            <FaLinkedin />
           </TimelineConnector>
           <TimelineContent>
             <Button variant="outline" onClick={openLinkedin}>

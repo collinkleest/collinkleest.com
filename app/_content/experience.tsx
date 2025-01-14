@@ -1,4 +1,6 @@
+import { Avatar } from 'app/_components'
 import { IExperience, IExperienceBlock } from '../_types'
+import { FaFileCode, FaServer } from 'react-icons/fa'
 
 export const experience: IExperience = {
   title: 'Experience',
@@ -6,10 +8,12 @@ export const experience: IExperience = {
     {
       companyName: 'Vanguard',
       timeline: 'Aug 2021 - Present',
+      avatar: <Avatar src={'images/vanguard.png'} />,
       roles: [
         {
           roleTitle: 'Software Technical Lead',
           roleTimeline: 'Aug 2023 - Present',
+          avatar: <FaServer />,
           roleBullets: [
             'Oversee the technical delivery of a full stack team using AEM and Angular, managing Vanguard Americas FAS secure and public sites.',
             'Review pull requests, contribute to system architecture and implementation, develop new features and tools, and address security vulnerabilities.',
@@ -30,6 +34,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Application Developer Intern',
           roleTimeline: 'Jun 2021 - Aug 2021',
+          avatar: <FaFileCode />,
           roleBullets: [
             'Contributed to a full-stack Angular-based College Cost Estimator web app that helps advisors and clients get an estimated cost of college for their children.',
             "Lead development of an electron application with a group of interns that manages Vanguard's community gardens."
@@ -40,6 +45,7 @@ export const experience: IExperience = {
     {
       companyName: 'Pfizer',
       timeline: 'Jun 2020 - Dec 2020',
+      avatar: <Avatar src={'images/pfizer.jpg'} />,
       roles: [
         {
           roleTitle: 'Associate Software Engineer',
@@ -52,6 +58,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Software Engineer Intern',
           roleTimeline: 'Jun 2020 - Aug 2020',
+          avatar: <FaFileCode />,
           roleBullets: [
             'Engineered a full stack web application that dynamically updates API documentation with latest releases of a set of micro-services',
             'Designed a front-end user interface using individual React components and built out a back-end that exposes a spring boot rest API',
