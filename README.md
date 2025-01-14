@@ -15,9 +15,8 @@ This site is hosted on github pages and can be found at [collinkleest.com](https
 2. [Local Development](#local-development)
 3. [Committing](#committing)
 4. [Build](#build)
-5. [Testing](#testing)
-6. [Linting](#linting)
-7. [Formatting](#formatting)
+5. [Linting](#linting)
+6. [Formatting](#formatting)
 
 ### Prerequisites
 
