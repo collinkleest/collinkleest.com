@@ -1,0 +1,22 @@
+name: collinkleest.com
+
+networks:
+  kong:
+    driver: bridge
+    name: kong-net
+
+services:
+  nginx:
+    container_name: collinkleest-website
+    image: node:20
+    build:
+      context: ./
+    networks:
+      - kong
+    ports:
+      - 3000:3000
+
+    restart: always
+    labels:
+      - collinkleest.com'
+      - 'nestjs'
