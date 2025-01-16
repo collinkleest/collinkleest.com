@@ -58,7 +58,7 @@ jobs:
       - name: Build
         env:
           DEPLOY_ENV: github-pages
-        run: pnpm build
+        run: pnpm build && ls -lsa && ls -lsa ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
