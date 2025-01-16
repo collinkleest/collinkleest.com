@@ -5,3 +5,12 @@ export interface IProjectDTO {
   language: string
   liveHomepage: string
 }
+
+export interface Repo {
+  name: string
+  description: string
+  html_url: string
+  language: string
+  homepage: string
+  archived: boolean
+}

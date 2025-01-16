@@ -29,3 +29,12 @@ export const excludedProjects = new Set([
   'collinkleest-cv',
   'collinkleest'
 ])
+
+export const priorityProjects = new Set([
+  'collinkleest.com',
+  'liteproxy',
+  'HAXcms',
+  'fpl.app',
+  'cf-ddns',
+  'JavaFit'
+])

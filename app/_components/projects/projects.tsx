@@ -17,11 +17,15 @@ import {
   Center,
   Flex
 } from '@chakra-ui/react'
-import { IProjectDTO } from '../../_types'
+import { IProjectDTO, Repo } from '../../_types'
 import { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
-import { langMappings, excludedProjects } from '../../_content'
+import {
+  langMappings,
+  excludedProjects,
+  priorityProjects
+} from '../../_content'
 
 export const Projects = () => {
   const githubApi = 'https://api.github.com/users/collinkleest/repos'
@@ -37,12 +41,25 @@ export const Projects = () => {
     setVisibleProjects([...visibleProjects, ...newVisibleProjects])
   }
 
+  const repoSorter = (repoA: Repo, repoB: Repo) => {
+    if (priorityProjects.has(repoA.name) && priorityProjects.has(repoB.name)) {
+      return 0
+    } else if (
+      priorityProjects.has(repoA.name) &&
+      !priorityProjects.has(repoB.name)
+    ) {
+      return 1
+    }
+    return -1
+  }
+
   useEffect(() => {
     fetch(githubApi)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: Repo[]) => {
         const mappedProjects = data
           .filter((data) => !data.archived && !excludedProjects.has(data.name))
+          .sort((a, b) => repoSorter(a, b))
           .map((repo) => {
             return {
               name: repo.name,
