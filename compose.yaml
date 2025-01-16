@@ -6,7 +6,7 @@ networks:
     name: kong-net
 
 services:
-  nginx:
+  collinkleest.com:
     container_name: collinkleest-website
     build:
       context: ./
