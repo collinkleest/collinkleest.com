@@ -8,7 +8,6 @@ networks:
 services:
   nginx:
     container_name: collinkleest-website
-    image: node:20
     build:
       context: ./
     networks:
