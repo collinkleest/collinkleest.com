@@ -19,4 +19,4 @@ services:
     restart: always
     labels:
       - collinkleest.com'
-      - 'nestjs'
+      - 'nextjs'
