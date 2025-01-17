@@ -1,37 +1,41 @@
 'use client'
 
 import {
-  Heading,
-  Spinner,
-  VStack,
-  Text,
+  GITHUB_API_ROOT,
+  GITHUB_REPOS_PER_PAGE,
+  GITHUB_USERNAME
+} from '@_constants'
+import {
+  Box,
+  Button,
   Card,
-  CardHeader,
   CardBody,
-  CardTitle,
-  SimpleGrid,
   CardDescription,
   CardFooter,
-  Button,
-  Box,
+  CardHeader,
+  CardTitle,
   Center,
   Flex,
+  Heading,
+  SimpleGrid,
   Skeleton
 } from '@chakra-ui/react'
-import { IProjectDTO, Repo } from '../../_types'
 import { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
 import {
-  langMappings,
   excludedProjects,
+  langMappings,
   priorityProjects,
   priorityProjectsArr
 } from '../../_content'
+import { IProjectDTO, Repo } from '../../_types'
 
 export const Projects = () => {
-  const githubApi = 'https://api.github.com/users/collinkleest/repos'
   const [projects, setProjects] = useState<IProjectDTO[]>([])
+  const [url, setUrl] = useState<string>(
+    `${GITHUB_API_ROOT}/users/${GITHUB_USERNAME}/repos?per_page=${GITHUB_REPOS_PER_PAGE}&page=1`
+  )
   const [visibleProjects, setVisibleProjects] = useState<IProjectDTO[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -43,7 +47,7 @@ export const Projects = () => {
     setVisibleProjects([...visibleProjects, ...newVisibleProjects])
   }
 
-  const repoSorter = (repoA: Repo, repoB: Repo) => {
+  const repoSorter = (repoA: IProjectDTO, repoB: IProjectDTO) => {
     const isRepoAPriority = priorityProjects.has(repoA.name)
     const isRepoBPriority = priorityProjects.has(repoB.name)
 
@@ -64,12 +68,16 @@ export const Projects = () => {
   }
 
   useEffect(() => {
-    fetch(githubApi)
-      .then((response) => response.json())
-      .then((data: Repo[]) => {
-        const mappedProjects = data
+    const fetchData = async () => {
+      const nextPattern = /(?<=<)([\S]*)(?=>; rel="Next")/i
+      const response = await fetch(url)
+      const linkHeader = response.headers.get('Link')
+      const pagesRemaining = linkHeader && linkHeader.includes(`rel=\"next\"`)
+      const data = (await response.json()) as Repo[]
+      setProjects([
+        ...projects,
+        ...data
           .filter((data) => !data.archived && !excludedProjects.has(data.name))
-          .sort((a, b) => repoSorter(a, b))
           .map((repo) => {
             return {
               name: repo.name,
@@ -79,11 +87,26 @@ export const Projects = () => {
               liveHomepage: repo.homepage
             }
           })
-        setProjects(mappedProjects)
-        setVisibleProjects(mappedProjects.slice(0, 6))
+      ])
+
+      if (visibleProjects.length < 6) {
+        setVisibleProjects(projects.slice(0, 6))
+      }
+
+      if (loading) {
         setLoading(false)
-      })
-  }, [])
+      }
+
+      if (pagesRemaining) {
+        setUrl(linkHeader.match(nextPattern)[0])
+      } else {
+        setProjects(projects.sort(repoSorter))
+        setVisibleProjects(projects.slice(0, 6))
+      }
+    }
+
+    fetchData()
+  }, [url])
 
   return (
     <>
