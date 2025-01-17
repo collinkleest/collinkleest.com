@@ -1,7 +1,7 @@
+import content from '@_content'
 import { GridItem, SimpleGrid } from '@chakra-ui/react'
-import { Headshot } from './headshot'
 import { Description } from './description'
-import content from '../../_content'
+import { Headshot } from './headshot'
 
 export const Intro = () => {
   return (

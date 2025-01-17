@@ -1,4 +1,4 @@
-import { ILinkButton } from '../../_types'
+import { ILinkButton } from '@_types'
 import { LinkButton } from './link-button'
 
 export const LinkList = ({ links }: { links: ILinkButton[] }) => {

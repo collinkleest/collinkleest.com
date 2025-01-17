@@ -6,6 +6,13 @@ import {
   GITHUB_USERNAME
 } from '@_constants'
 import {
+  excludedProjects,
+  langMappings,
+  priorityProjects,
+  priorityProjectsArr
+} from '@_content'
+import { IProjectDTO, Repo } from '@_types'
+import {
   Box,
   Button,
   Card,
@@ -23,13 +30,6 @@ import {
 import { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
-import {
-  excludedProjects,
-  langMappings,
-  priorityProjects,
-  priorityProjectsArr
-} from '../../_content'
-import { IProjectDTO, Repo } from '../../_types'
 
 export const Projects = () => {
   const [projects, setProjects] = useState<IProjectDTO[]>([])

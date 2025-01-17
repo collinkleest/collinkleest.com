@@ -1,7 +1,7 @@
 'use client'
 
+import { openLink } from '@_utils'
 import { Box, Button, Text } from '@chakra-ui/react'
-import { openLink } from '../../_utils'
 import { FaReact } from 'react-icons/fa'
 import { RiNextjsFill } from 'react-icons/ri'
 import { SiChakraui } from 'react-icons/si'

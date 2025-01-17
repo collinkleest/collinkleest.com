@@ -1,9 +1,9 @@
 import { Provider } from './provider'
 // These styles apply to every route in the application
-import './global.css'
+import { Footer, Header } from '@_components'
 import { Inter } from 'next/font/google'
-import { Footer, Header } from './_components'
-export { metadata } from './_content'
+import './global.css'
+export { metadata } from '@_content'
 
 const inter = Inter({
   subsets: ['latin'],

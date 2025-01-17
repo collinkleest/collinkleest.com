@@ -1,6 +1,6 @@
+import { Avatar } from '@_components'
+import { IExperience } from '@_types'
 import { FaFileCode, FaServer } from 'react-icons/fa'
-import { Avatar } from '../_components/'
-import { IExperience } from '../_types'
 
 export const experience: IExperience = {
   title: 'Experience',

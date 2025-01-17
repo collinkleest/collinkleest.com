@@ -1,4 +1,4 @@
-import { IHeader } from '../_types'
+import { IHeader } from '@_types'
 
 export const header: IHeader = {
   logoText: 'Collin Kleest',

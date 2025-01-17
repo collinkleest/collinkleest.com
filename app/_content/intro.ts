@@ -1,4 +1,4 @@
-import { IIntro } from '../_types'
+import { IIntro } from '@_types'
 
 export const intro: IIntro = {
   description: {

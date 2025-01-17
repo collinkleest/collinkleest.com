@@ -1,5 +1,5 @@
+import { IIntroHeadshot } from '@_types'
 import { Image } from '@chakra-ui/react'
-import { IIntroHeadshot } from '../../_types'
 
 export const Headshot = (props: { headshot: IIntroHeadshot }) => {
   return (

@@ -1,5 +1,7 @@
 'use client'
 
+import { experience } from '@_content'
+import { IExperienceBlock, IExperienceRole } from '@_types'
 import { Button, Heading, List } from '@chakra-ui/react'
 import { useState } from 'react'
 import { BsBook } from 'react-icons/bs'
@@ -12,8 +14,6 @@ import {
   TimelineRoot,
   TimelineTitle
 } from '../../../components/ui/timeline'
-import { experience } from '../../_content'
-import { IExperienceBlock, IExperienceRole } from '../../_types'
 
 export const Timeline = () => {
   const [shownExperience, setShownExperience] = useState<IExperienceBlock[]>(

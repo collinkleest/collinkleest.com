@@ -1,4 +1,4 @@
-import { IContent } from '../_types'
+import { IContent } from '@_types'
 import { experience } from './experience'
 import { header } from './header'
 import { intro } from './intro'

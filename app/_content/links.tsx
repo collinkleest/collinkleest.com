@@ -1,4 +1,4 @@
-import { ILinkList } from '../_types'
+import { ILinkList } from '@_types'
 import { FaDev, FaGithub, FaLinkedin, FaSpotify } from 'react-icons/fa'
 
 export const links: ILinkList = {

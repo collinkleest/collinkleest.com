@@ -20,7 +20,11 @@
     "target": "ESNext",
     "paths": {
       "@/*": ["./components/*"],
-      "@_constants": ["./app/_constants"]
+      "@_constants": ["./app/_constants"],
+      "@_types": ["./app/_types"],
+      "@_content": ["./app/_content"],
+      "@_utils": ["./app/_utils"],
+      "@_components": ["./app/_components"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],

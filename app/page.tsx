@@ -1,8 +1,6 @@
+import { Intro, LinkList, Projects, Resume, Timeline } from '@_components'
+import content from '@_content'
 import { Box, Container } from '@chakra-ui/react'
-import { Intro, LinkButton, LinkList, Resume, Timeline } from './_components'
-import { FaLinkedin } from 'react-icons/fa'
-import content from './_content'
-import { Projects } from './_components/projects'
 
 export default function Page() {
   return (

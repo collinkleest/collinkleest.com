@@ -1,5 +1,5 @@
-import { Text, Highlight } from '@chakra-ui/react'
-import { IIntroDescription } from '../../_types'
+import { IIntroDescription } from '@_types'
+import { Highlight, Text } from '@chakra-ui/react'
 
 export const Description = (props: { description: IIntroDescription }) => {
   return (
