@@ -15,7 +15,8 @@ import {
   Button,
   Box,
   Center,
-  Flex
+  Flex,
+  Skeleton
 } from '@chakra-ui/react'
 import { IProjectDTO, Repo } from '../../_types'
 import { useEffect, useState } from 'react'
@@ -90,10 +91,11 @@ export const Projects = () => {
         Projects
       </Heading>
       {loading && (
-        <VStack>
-          <Spinner />
-          <Text>Loading...</Text>
-        </VStack>
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
+          {[0, 1, 2, 3, 4, 5].map((index) => {
+            return <Skeleton h={207} key={index}></Skeleton>
+          })}
+        </SimpleGrid>
       )}
       {!loading && visibleProjects && (
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
@@ -130,7 +132,7 @@ export const Projects = () => {
         visibleProjects.length !== projects.length && (
           <Box my={4}>
             <Center>
-              <Button onClick={showMoreProjects} variant={'subtle'}>
+              <Button onClick={showMoreProjects} variant={'outline'}>
                 Show More
               </Button>
             </Center>
