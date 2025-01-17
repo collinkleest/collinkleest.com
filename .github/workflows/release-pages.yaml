@@ -58,7 +58,7 @@ jobs:
       - name: Build
         env:
           DEPLOY_ENV: github-pages
-        run: echo $DEPLOY_ENV && pnpm build && ls -lsa && ls -lsa ./out
+        run: rm next.config.js && pnpm build && ls -lsa
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
