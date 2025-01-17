@@ -1,6 +1,6 @@
-import { Avatar } from '../_components/'
-import { IExperience, IExperienceBlock } from '../_types'
 import { FaFileCode, FaServer } from 'react-icons/fa'
+import { Avatar } from '../_components/'
+import { IExperience } from '../_types'
 
 export const experience: IExperience = {
   title: 'Experience',
@@ -11,7 +11,7 @@ export const experience: IExperience = {
       avatar: <Avatar src={'images/vanguard.png'} />,
       roles: [
         {
-          roleTitle: 'Software Technical Lead',
+          roleTitle: 'Software Technical Lead - Americas FAS',
           roleTimeline: 'Aug 2023 - Present',
           avatar: <FaServer />,
           roleBullets: [
@@ -66,61 +66,60 @@ export const experience: IExperience = {
           ]
         }
       ]
+    },
+    {
+      companyName: 'Penn State College of Information Sciences and Technology',
+      timeline: 'Jan 2019 - May 2020',
+      avatar: <Avatar src={'images/pennstate.png'} />,
+      roles: [
+        {
+          roleTitle: 'Java Learning Assistant',
+          roleBlurb:
+            'Object Oriented Programming Course with Professor Shawn Smith, Penn State Director of Software Engineering',
+          roleTimeline: 'Jan 2020 - May 2020',
+          roleBullets: [
+            'Taught a set of students fundamental object oriented programming concepts',
+            'Assisted instructor with lectures, grading, and course materials.'
+          ]
+        },
+        {
+          roleTitle: 'Learning Assistant Coordinator',
+          roleTimeline: 'Jan 2020 - May 2020',
+          roleBullets: [
+            'Managing ten learning assistants',
+            'Facilitating communications to tutors.',
+            'Conducting interviews on new potential teaching assistant hires.'
+          ]
+        },
+        {
+          roleTitle: 'Instructional Assistant and Lead Teaching Assistant',
+          roleTimeline: 'Jan 2019 - Dec 2019',
+          roleBlurb:
+            'Security and Risk Analysis introduction course taught by Dr. Edward Glantz, PE, CISSP',
+          roleBullets: [
+            'Managed two new teaching assistants and oversaw their grading and strengthened their teaching methods.',
+            'Enhanced course assignments and structure assisted instructor with grading and lectures.'
+          ]
+        }
+      ]
+    },
+    {
+      companyName: 'Rajant Coporation',
+      timeline: 'May 2019 - Aug 2019',
+      avatar: <Avatar src={'images/rajant.png'} />,
+      roles: [
+        {
+          roleTitle: 'Systems Engineer Intern',
+          roleTimeline: 'May 2019 - Aug 2019',
+          roleBlurb:
+            'Rajant is a defense contractor that produces networking technology that enables secure, real-time communication',
+          roleBullets: [
+            'Established an API Gateway to provide centralized authentication for API’s and 115 employees.',
+            'Engineered a power monitoring system, that utilizes Python on a Raspberry Pi.',
+            'Analyzed a corporate network of 10-15 servers, two VPN connections, and multiple Virtual LAN’s.'
+          ]
+        }
+      ]
     }
   ]
 }
-
-export const deprecatedExperienceBlocks: IExperienceBlock[] = [
-  {
-    companyName: 'Penn State College of Information Sciences and Technology',
-    timeline: 'Jan 2019 - May 2020',
-    roles: [
-      {
-        roleTitle: 'Java Learning Assistant',
-        roleBlurb:
-          'Object Oriented Programming Course with Professor Shawn Smith, Penn State Director of Software Engineering',
-        roleTimeline: 'Jan 2020 - May 2020',
-        roleBullets: [
-          'Taught a set of students fundamental object oriented programming concepts',
-          'Assisted instructor with lectures, grading, and course materials.'
-        ]
-      },
-      {
-        roleTitle: 'Learning Assistant Coordinator',
-        roleTimeline: 'Jan 2020 - May 2020',
-        roleBullets: [
-          'Managing ten learning assistants',
-          'Facilitating communications to tutors.',
-          'Conducting interviews on new potential teaching assistant hires.'
-        ]
-      },
-      {
-        roleTitle: 'Instructional Assistant and Lead Teaching Assistant',
-        roleTimeline: 'Jan 2019 - Dec 2019',
-        roleBlurb:
-          'Security and Risk Analysis introduction course taught by Dr. Edward Glantz, PE, CISSP',
-        roleBullets: [
-          'Managed two new teaching assistants and oversaw their grading and strengthened their teaching methods.',
-          'Enhanced course assignments and structure assisted instructor with grading and lectures.'
-        ]
-      }
-    ]
-  },
-  {
-    companyName: 'Rajant Coporation',
-    timeline: 'May 2019 - Aug 2019',
-    roles: [
-      {
-        roleTitle: 'Systems Engineer Intern',
-        roleTimeline: 'May 2019 - Aug 2019',
-        roleBlurb:
-          'Rajant is a defense contractor that produces networking technology that enables secure, real-time communication',
-        roleBullets: [
-          'Established an API Gateway to provide centralized authentication for API’s and 115 employees.',
-          'Engineered a power monitoring system, that utilizes Python on a Raspberry Pi.',
-          'Analyzed a corporate network of 10-15 servers, two VPN connections, and multiple Virtual LAN’s.'
-        ]
-      }
-    ]
-  }
-]

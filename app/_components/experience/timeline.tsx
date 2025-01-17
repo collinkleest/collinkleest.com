@@ -1,5 +1,9 @@
 'use client'
 
+import { Button, Heading, List } from '@chakra-ui/react'
+import { useState } from 'react'
+import { BsBook } from 'react-icons/bs'
+import { FaCode } from 'react-icons/fa'
 import {
   TimelineConnector,
   TimelineContent,
@@ -8,15 +12,22 @@ import {
   TimelineRoot,
   TimelineTitle
 } from '../../../components/ui/timeline'
-import { PiBooks } from 'react-icons/pi'
 import { experience } from '../../_content'
 import { IExperienceBlock, IExperienceRole } from '../../_types'
-import { Avatar, Button, Heading, List } from '@chakra-ui/react'
-import { FaLinkedin, FaCode } from 'react-icons/fa'
 
 export const Timeline = () => {
-  const openLinkedin = () => {
-    window.open('https://www.linkedin.com/in/collinkleest/', '_blank')
+  const [shownExperience, setShownExperience] = useState<IExperienceBlock[]>(
+    experience.experienceBlocks.slice(0, 2)
+  )
+
+  const viewMoreExperience = () => {
+    setShownExperience([
+      ...shownExperience,
+      ...experience.experienceBlocks.slice(
+        shownExperience.length,
+        shownExperience.length + 1
+      )
+    ])
   }
 
   return (
@@ -24,56 +35,62 @@ export const Timeline = () => {
       <Heading textStyle={'4xl'} my={8}>
         Experience
       </Heading>
-      <TimelineRoot variant={'solid'} size="lg" maxWidth={'2xl'}>
-        {experience.experienceBlocks.map(
-          (block: IExperienceBlock, index: number) => {
-            return (
-              <TimelineItem key={index}>
-                <TimelineConnector>{block.avatar}</TimelineConnector>
-                <TimelineContent>
-                  <TimelineTitle>{block.companyName}</TimelineTitle>
-                  <TimelineDescription>{block.timeline}</TimelineDescription>
-                  <TimelineRoot variant={'solid'} size={'lg'}>
-                    {block.roles.map((role: IExperienceRole, index: number) => {
-                      return (
-                        <TimelineItem key={index}>
-                          <TimelineConnector>
-                            {role.avatar ?? <FaCode />}
-                          </TimelineConnector>
-                          <TimelineContent>
-                            <TimelineTitle>{role.roleTitle}</TimelineTitle>
+      <TimelineRoot variant={'solid'} size="lg" maxWidth={'6xl'}>
+        {shownExperience.map((block: IExperienceBlock, index: number) => {
+          return (
+            <TimelineItem key={index}>
+              <TimelineConnector>{block.avatar}</TimelineConnector>
+              <TimelineContent>
+                <TimelineTitle textStyle={'lg'}>
+                  {block.companyName}
+                </TimelineTitle>
+                <TimelineDescription>{block.timeline}</TimelineDescription>
+                <TimelineRoot variant={'solid'} size={'lg'}>
+                  {block.roles.map((role: IExperienceRole, index: number) => {
+                    return (
+                      <TimelineItem key={index}>
+                        <TimelineConnector>
+                          {role.avatar ?? <FaCode />}
+                        </TimelineConnector>
+                        <TimelineContent>
+                          <TimelineTitle textStyle={'md'}>
+                            {role.roleTitle}
+                          </TimelineTitle>
+                          {block.roles.length > 1 && (
                             <TimelineDescription>
                               {role.roleTimeline}
                             </TimelineDescription>
-                            <List.Root>
-                              {role.roleBullets.map((bullet, index) => {
-                                return (
-                                  <List.Item textStyle={'xs'} key={index}>
-                                    {bullet}
-                                  </List.Item>
-                                )
-                              })}
-                            </List.Root>
-                          </TimelineContent>
-                        </TimelineItem>
-                      )
-                    })}
-                  </TimelineRoot>
-                </TimelineContent>
-              </TimelineItem>
-            )
-          }
+                          )}
+                          <List.Root>
+                            {role.roleBullets.map((bullet, index) => {
+                              return (
+                                <List.Item textStyle={'md'} key={index}>
+                                  {bullet}
+                                </List.Item>
+                              )
+                            })}
+                          </List.Root>
+                        </TimelineContent>
+                      </TimelineItem>
+                    )
+                  })}
+                </TimelineRoot>
+              </TimelineContent>
+            </TimelineItem>
+          )
+        })}
+        {experience.experienceBlocks.length > shownExperience.length && (
+          <TimelineItem>
+            <TimelineConnector>
+              <BsBook />
+            </TimelineConnector>
+            <TimelineContent>
+              <Button variant="outline" onClick={viewMoreExperience}>
+                Show more experience
+              </Button>
+            </TimelineContent>
+          </TimelineItem>
         )}
-        <TimelineItem>
-          <TimelineConnector>
-            <FaLinkedin />
-          </TimelineConnector>
-          <TimelineContent>
-            <Button variant="outline" onClick={openLinkedin}>
-              View More Experience on Linkedin
-            </Button>
-          </TimelineContent>
-        </TimelineItem>
       </TimelineRoot>
     </>
   )
