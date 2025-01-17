@@ -38,3 +38,5 @@ export const priorityProjects = new Set([
   'cf-ddns',
   'JavaFit'
 ])
+
+export const priorityProjectsArr = [...priorityProjects]

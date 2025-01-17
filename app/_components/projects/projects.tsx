@@ -24,7 +24,8 @@ import { TbWorldWww } from 'react-icons/tb'
 import {
   langMappings,
   excludedProjects,
-  priorityProjects
+  priorityProjects,
+  priorityProjectsArr
 } from '../../_content'
 
 export const Projects = () => {
@@ -42,15 +43,23 @@ export const Projects = () => {
   }
 
   const repoSorter = (repoA: Repo, repoB: Repo) => {
-    if (priorityProjects.has(repoA.name) && priorityProjects.has(repoB.name)) {
-      return 0
-    } else if (
-      priorityProjects.has(repoA.name) &&
-      !priorityProjects.has(repoB.name)
-    ) {
+    const isRepoAPriority = priorityProjects.has(repoA.name)
+    const isRepoBPriority = priorityProjects.has(repoB.name)
+
+    if (isRepoAPriority && isRepoBPriority) {
+      const repoAIndex = priorityProjectsArr.indexOf(repoA.name)
+      const repoBIndex = priorityProjectsArr.indexOf(repoB.name)
+      if (repoBIndex < repoAIndex) {
+        return 1
+      }
+      return -1
+    } else if (isRepoBPriority) {
       return 1
+    } else if (isRepoAPriority) {
+      return -1
     }
-    return -1
+
+    return 0
   }
 
   useEffect(() => {
