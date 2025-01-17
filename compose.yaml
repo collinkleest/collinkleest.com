@@ -6,10 +6,9 @@ networks:
     name: kong-net
 
 services:
-  collinkleest.com:
+  webapp:
     container_name: collinkleest-website
-    build:
-      context: ./
+    build: .
     networks:
       - kong
     ports:
