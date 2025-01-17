@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 
 export const Resume = () => {
   return (
@@ -15,12 +15,16 @@ export const Resume = () => {
         . My resume is available for download in PDF format or you can view it
         in a new tab.
       </Text>
-      <Flex gap={{ base: 2, md: 6 }}>
+      <Flex gap={{ base: 2, md: 6 }} wrap={'wrap'}>
         <a href="docs/resume.pdf" target="_blank">
-          <Button variant={'subtle'}>View resume in new tab</Button>
+          <Button size={'sm'} variant={'outline'}>
+            View resume in new tab
+          </Button>
         </a>
         <a href="docs/resume.pdf" download>
-          <Button variant={'subtle'}>Download Resume PDF</Button>
+          <Button size={'sm'} variant={'outline'}>
+            Download Resume PDF
+          </Button>
         </a>
       </Flex>
     </>
