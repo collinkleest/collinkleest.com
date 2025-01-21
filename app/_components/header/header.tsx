@@ -1,10 +1,14 @@
 'use client'
 
-import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react'
-import { useState } from 'react'
-import { Logo } from './logo'
-import { GiHamburgerMenu } from 'react-icons/gi'
 import { CloseButton } from '@/ui/close-button'
+import { Box, Button, Flex, IconButton, Stack, Text } from '@chakra-ui/react'
+import { useState } from 'react'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { HiBeaker } from 'react-icons/hi'
+import { IoIosDocument } from 'react-icons/io'
+import { IoPerson } from 'react-icons/io5'
+import { MdWork } from 'react-icons/md'
+import { ColorModeButton } from '../../color-mode'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +17,11 @@ export const Header = () => {
   // TODO: add responsive mobile design
   return (
     <Box borderBottom={'1px solid #eaeaea'}>
-      <Flex mx={{ base: 2, md: 60 }} align={'center'} justify={'center'} py={4}>
+      <Flex
+        mx={{ base: 2, md: 30, lg: 50, xl: 70 }}
+        align={'center'}
+        justify={'between'}
+        py={4}>
         {/* <Flex justify={'flex-start'}> */}
         <Box marginEnd={'auto'}>
           <a href="#">
@@ -27,7 +35,12 @@ export const Header = () => {
         {/* </Flex> */}
         {/* <Flex justify={'flex-end'} marginEnd={'auto'}> */}
         <Box display={{ base: 'block', md: 'none' }} ml={4}>
-          {!isOpen && <GiHamburgerMenu onClick={() => setIsOpen(true)} />}
+          <ColorModeButton />
+          {!isOpen && (
+            <IconButton variant={'outline'}>
+              <GiHamburgerMenu onClick={() => setIsOpen(true)} />
+            </IconButton>
+          )}
           {isOpen && <CloseButton onClick={() => setIsOpen(false)} />}
         </Box>
         <Box display={{ base: 'none', md: 'block' }}>
@@ -62,6 +75,7 @@ export const Header = () => {
             </a>
           </Stack>
         </Box>
+        <ColorModeButton display={{ base: 'none', md: 'inline-flex' }} />
         {/* </Flex> */}
       </Flex>
       {isOpen && (
@@ -69,6 +83,7 @@ export const Header = () => {
           <Stack direction={{ base: 'column', md: 'row' }}>
             <a href="#about">
               <Button size={'sm'} variant={'ghost'}>
+                <IoPerson />
                 <Text textStyle="sm" fontWeight={'bold'}>
                   About
                 </Text>
@@ -76,6 +91,8 @@ export const Header = () => {
             </a>
             <a href="#experience">
               <Button size={'sm'} variant={'ghost'}>
+                <MdWork />
+
                 <Text textStyle="sm" fontWeight={'bold'}>
                   Experience
                 </Text>
@@ -83,6 +100,7 @@ export const Header = () => {
             </a>
             <a href="#resume">
               <Button size={'sm'} variant={'ghost'}>
+                <IoIosDocument />
                 <Text textStyle="sm" fontWeight={'bold'}>
                   Resume
                 </Text>
@@ -90,6 +108,8 @@ export const Header = () => {
             </a>
             <a href="#projects">
               <Button size={'sm'} variant={'ghost'}>
+                <HiBeaker />
+
                 <Text textStyle="sm" fontWeight={'bold'}>
                   Projects
                 </Text>
