@@ -12,7 +12,6 @@ import { ColorModeButton } from '../../color-mode'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => setIsOpen(!isOpen)
   // TODO: abstract into content and clean up
   // TODO: add responsive mobile design
   return (
