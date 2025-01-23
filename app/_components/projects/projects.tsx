@@ -7,29 +7,14 @@ import {
 } from '@_constants'
 import {
   excludedProjects,
-  langMappings,
   priorityProjects,
   priorityProjectsArr
 } from '@_content'
 import { IProjectDTO, Repo } from '@_types'
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Center,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Skeleton
-} from '@chakra-ui/react'
+import { Heading, SimpleGrid, Skeleton } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import { FaGithub } from 'react-icons/fa'
-import { TbWorldWww } from 'react-icons/tb'
+import { ProjectCard } from './project-card'
+import { ShowMore } from './show-more'
 
 export const Projects = () => {
   const [projects, setProjects] = useState<IProjectDTO[]>([])
@@ -124,28 +109,14 @@ export const Projects = () => {
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
           {visibleProjects.map((project) => {
             return (
-              <Card.Root key={project.name}>
-                <CardHeader>
-                  <Flex gap={2} align={'center'}>
-                    {langMappings[project?.language?.toLowerCase()]}
-                    {project.language}
-                  </Flex>
-                </CardHeader>
-                <CardBody>
-                  <CardTitle>{project.name}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardBody>
-                <CardFooter>
-                  <a href={project.url} target="_blank">
-                    <FaGithub />
-                  </a>
-                  {project.liveHomepage && (
-                    <a href={project.liveHomepage} target="_blank">
-                      <TbWorldWww />
-                    </a>
-                  )}
-                </CardFooter>
-              </Card.Root>
+              <ProjectCard
+                key={project.name}
+                name={project.name}
+                description={project.description}
+                liveHomepage={project.liveHomepage}
+                url={project.url}
+                language={project.language}
+              />
             )
           })}
         </SimpleGrid>
@@ -153,13 +124,7 @@ export const Projects = () => {
       {!loading &&
         visibleProjects &&
         visibleProjects.length !== projects.length && (
-          <Box my={4}>
-            <Center>
-              <Button onClick={showMoreProjects} variant={'outline'}>
-                Show More
-              </Button>
-            </Center>
-          </Box>
+          <ShowMore showMoreProjects={showMoreProjects} />
         )}
     </>
   )
