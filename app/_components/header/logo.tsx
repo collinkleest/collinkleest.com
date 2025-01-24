@@ -1,14 +1,15 @@
-import { Box, Button, Text } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 
 export const Logo = () => {
   return (
     <Box marginEnd={'auto'}>
       <a href="#">
-        <Button size={'sm'} variant={'ghost'}>
-          <Text textStyle="sm" fontWeight={'bold'}>
-            Collin Kleest
-          </Text>
-        </Button>
+        <Image
+          rounded="md"
+          src="images/CK_Logo_500x500_WHITE.png"
+          alt="Collin Kleest Logo"
+          boxSize="50px"
+        />
       </a>
     </Box>
   )
