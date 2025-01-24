@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html className={inter.className} lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="images/CK_Logo_500x500_GREY.png" />
+      </head>
       <body>
         <Provider>
           <Header />
