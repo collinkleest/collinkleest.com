@@ -20,14 +20,14 @@ export const Logo = () => {
             rounded="md"
             src="images/CK_Logo_500x500_WHITE.png"
             alt="Collin Kleest Logo"
-            boxSize="50px"
+            boxSize={{ base: '30px', md: '45px' }}
           />
         ) : (
           <Image
             rounded="md"
             src="images/CK_Logo_500x500.png"
             alt="Collin Kleest Logo"
-            boxSize="50px"
+            boxSize={{ base: '30px', md: '45px' }}
           />
         )}
       </a>
