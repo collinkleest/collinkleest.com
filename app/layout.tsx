@@ -18,7 +18,26 @@ export default function RootLayout({
   return (
     <html className={inter.className} lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="images/CK_Logo_500x500_GREY.png" />
+        <link
+          rel="icon"
+          id="default-scheme-icon"
+          href="images/CK_Logo_500x500_WHITE.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          id="light-scheme-icon"
+          href="images/CK_Logo_500x500.png"
+          media="(prefers-color-scheme: light)"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          id="dark-scheme-icon"
+          media="(prefers-color-scheme: dark)"
+          href="images/CK_Logo_500x500_WHITE.png"
+          type="image/x-icon"
+        />
       </head>
       <body>
         <Provider>
