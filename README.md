@@ -93,13 +93,3 @@ To check if files are up to the prettier standard run the following.
 ```bash
 $ pnpm format:check
 ```
-
-### Releasing
-
-Releasing follows the semver practice.
-
-If you want to release a new version run the following
-
-```bash
-$ pnpm release
-```
