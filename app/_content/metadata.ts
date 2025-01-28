@@ -26,7 +26,9 @@ export const metadata: Metadata = {
     emails: 'collinkleest@gmail.com',
     siteName: 'collinkleest.com',
     url: 'https://collinkleest.com',
-    images: ['images/philly.jpeg']
+    images: ['https://collinkleest.com/images/philly.jpeg'],
+    type: 'website',
+    locale: 'en_US'
   },
   authors: [{ name: 'Collin Kleest', url: 'https://collinkleest.com' }],
   creator: 'Collin Kleest',
