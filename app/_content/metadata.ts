@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     'React',
     'JavaScript'
   ],
+  openGraph: {
+    title: 'Collin Kleest - Tech Lead',
+    description: 'Software Engineer based in Philadelphia',
+    emails: 'collinkleest@gmail.com',
+    siteName: 'collinkleest.com',
+    url: 'https://collinkleest.com',
+    images: ['images/philly.jpeg']
+  },
   authors: [{ name: 'Collin Kleest', url: 'https://collinkleest.com' }],
   creator: 'Collin Kleest',
   publisher: 'Collin Kleest',
