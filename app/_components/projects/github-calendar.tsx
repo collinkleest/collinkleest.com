@@ -1,5 +1,12 @@
 import GitHubCalendar from 'react-github-calendar'
+import { ThemeType, useColorMode } from '../../color-mode'
 
 export const GithubCalendar = () => {
-  return <GitHubCalendar username="collinkleest" />
+  const { colorMode } = useColorMode()
+  return (
+    <GitHubCalendar
+      username="collinkleest"
+      colorScheme={colorMode as ThemeType}
+    />
+  )
 }
