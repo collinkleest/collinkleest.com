@@ -13,6 +13,7 @@ import {
 import { IProjectDTO, Repo } from '@_types'
 import { Heading, SimpleGrid, Skeleton } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { GithubCalendar } from './github-calendar'
 import { ProjectCard } from './project-card'
 import { ShowMore } from './show-more'
 
@@ -98,6 +99,10 @@ export const Projects = () => {
       <Heading textStyle={'4xl'} my={8}>
         Projects
       </Heading>
+      <Heading textStyle={'2xl'} my={8}>
+        Github Contributions
+      </Heading>
+      <GithubCalendar />
       {loading && (
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
           {[0, 1, 2, 3, 4, 5].map((index) => {
