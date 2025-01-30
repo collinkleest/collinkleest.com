@@ -5,9 +5,22 @@ import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
 
+const getGithubCalendarYears = (
+  currentYear: number,
+  endYear: number
+): number[] => {
+  const numberOfYears = currentYear - endYear
+  const years = []
+  for (let i = 0; i < numberOfYears + 1; i++) {
+    years.push(endYear + i)
+  }
+  return years
+}
+
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
   const [selectedYear, setSelectedYear] = useState(2025)
+  const years = getGithubCalendarYears(new Date().getFullYear(), 2018)
 
   return (
     <>
@@ -21,9 +34,13 @@ export const GithubCalendar = () => {
         </GridItem>
         <GridItem colSpan={2}>
           <VStack>
-            <Button onClick={() => setSelectedYear(2025)}>2025</Button>
-            <Button onClick={() => setSelectedYear(2024)}>2024</Button>
-            <Button onClick={() => setSelectedYear(2023)}>2023</Button>
+            {years.map((year) => {
+              return (
+                <Button key={year} onClick={() => setSelectedYear(year)}>
+                  {year}
+                </Button>
+              )
+            })}
           </VStack>
         </GridItem>
       </SimpleGrid>
