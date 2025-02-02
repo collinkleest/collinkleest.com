@@ -12,7 +12,7 @@ const getGithubCalendarYears = (
   const numberOfYears = currentYear - endYear
   const years = []
   for (let i = 0; i < numberOfYears + 1; i++) {
-    years.push(endYear + i)
+    years.push(currentYear - i)
   }
   return years
 }
@@ -36,7 +36,11 @@ export const GithubCalendar = () => {
           <VStack>
             {years.map((year) => {
               return (
-                <Button key={year} onClick={() => setSelectedYear(year)}>
+                <Button
+                  key={year}
+                  variant={'outline'}
+                  size={'xs'}
+                  onClick={() => setSelectedYear(year)}>
                   {year}
                 </Button>
               )
