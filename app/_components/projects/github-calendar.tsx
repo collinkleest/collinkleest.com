@@ -24,15 +24,27 @@ export const GithubCalendar = () => {
 
   return (
     <>
-      <Flex my={4} gap={4} h={'10rem'} direction={'row'}>
-        <Box>
+      <Flex
+        my={4}
+        gap={4}
+        h={'10rem'}
+        direction={'row'}
+        align="stretch"
+        justifyContent="flex-start"
+        wrap="wrap">
+        <Box flex="1" minWidth="0" maxWidth="900px">
           <GitHubCalendar
             username="collinkleest"
             colorScheme={colorMode as ThemeType}
             year={selectedYear}
           />
         </Box>
-        <Box h={'10rem'} display="flex" alignItems="stretch">
+        <Box
+          h={'10rem'}
+          overflow="hidden"
+          flex="0 0 auto"
+          maxWidth="150px"
+          alignItems="stretch">
           <VStack maxH={'full'} overflowY={'auto'}>
             {years.map((year) => {
               return (
