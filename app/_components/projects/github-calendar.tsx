@@ -1,5 +1,6 @@
 'use client'
 
+import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@/ui/menu'
 import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
@@ -25,6 +26,27 @@ export const GithubCalendar = () => {
   return (
     <>
       <Heading textStyle={'2xl'}>Github Contributions</Heading>
+      <Box display={{ base: 'block', md: 'none' }}>
+        <MenuRoot>
+          <MenuTrigger asChild>
+            <Button variant="outline" size="sm">
+              {selectedYear}
+            </Button>
+          </MenuTrigger>
+          <MenuContent>
+            {years.map((year) => {
+              return (
+                <MenuItem
+                  onClick={() => setSelectedYear(year)}
+                  key={year}
+                  value={year.toString()}>
+                  {year}
+                </MenuItem>
+              )
+            })}
+          </MenuContent>
+        </MenuRoot>
+      </Box>
       <Flex
         my={4}
         gap={4}
