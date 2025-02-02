@@ -99,9 +99,6 @@ export const Projects = () => {
       <Heading textStyle={'4xl'} my={8}>
         Projects
       </Heading>
-      <Heading textStyle={'2xl'} my={8}>
-        Github Contributions
-      </Heading>
       <Box my={12}>
         <GithubCalendar />
       </Box>

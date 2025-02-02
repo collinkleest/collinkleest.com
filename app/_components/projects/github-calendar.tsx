@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Button, Flex, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
@@ -24,6 +24,7 @@ export const GithubCalendar = () => {
 
   return (
     <>
+      <Heading textStyle={'2xl'}>Github Contributions</Heading>
       <Flex
         my={4}
         gap={4}
@@ -40,6 +41,7 @@ export const GithubCalendar = () => {
           />
         </Box>
         <Box
+          display={{ base: 'none', md: 'block' }}
           h={'10rem'}
           overflow="hidden"
           flex="0 0 auto"
