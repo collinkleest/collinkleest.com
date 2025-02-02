@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, GridItem, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
@@ -24,16 +24,16 @@ export const GithubCalendar = () => {
 
   return (
     <>
-      <SimpleGrid columns={8} gap={0}>
-        <GridItem colSpan={6}>
+      <Flex my={4} gap={4} h={'10rem'} direction={'row'}>
+        <Box>
           <GitHubCalendar
             username="collinkleest"
             colorScheme={colorMode as ThemeType}
             year={selectedYear}
           />
-        </GridItem>
-        <GridItem colSpan={2}>
-          <VStack>
+        </Box>
+        <Box h={'10rem'} display="flex" alignItems="stretch">
+          <VStack maxH={'full'} overflowY={'auto'}>
             {years.map((year) => {
               return (
                 <Button
@@ -46,8 +46,8 @@ export const GithubCalendar = () => {
               )
             })}
           </VStack>
-        </GridItem>
-      </SimpleGrid>
+        </Box>
+      </Flex>
     </>
   )
 }
