@@ -38,7 +38,7 @@ export const GithubCalendar = () => {
               return (
                 <Button
                   key={year}
-                  variant={'outline'}
+                  variant={year == selectedYear ? 'solid' : 'outline'}
                   size={'xs'}
                   onClick={() => setSelectedYear(year)}>
                   {year}
