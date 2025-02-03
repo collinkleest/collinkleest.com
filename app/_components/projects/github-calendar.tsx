@@ -26,29 +26,32 @@ export const GithubCalendar = () => {
 
   return (
     <>
-      <Heading textStyle={'2xl'}>Github Contributions</Heading>
-      <Box display={{ base: 'block', md: 'none' }}>
-        <MenuRoot>
-          <MenuTrigger asChild>
-            <Button variant="outline" size="sm">
-              <Text>Year:</Text> <Text fontWeight={'bold'}>{selectedYear}</Text>
-            </Button>
-          </MenuTrigger>
-          <MenuContent>
-            {years.map((year) => {
-              return (
-                <MenuItem
-                  onClick={() => setSelectedYear(year)}
-                  key={year}
-                  bg={year == selectedYear ? bgColor : ''}
-                  value={year.toString()}>
-                  {year}
-                </MenuItem>
-              )
-            })}
-          </MenuContent>
-        </MenuRoot>
-      </Box>
+      <Flex justify={'space-between'}>
+        <Heading textStyle={'2xl'}>Github Contributions</Heading>
+        <Box display={{ base: 'block', md: 'none' }}>
+          <MenuRoot>
+            <MenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                <Text>Year:</Text>{' '}
+                <Text fontWeight={'bold'}>{selectedYear}</Text>
+              </Button>
+            </MenuTrigger>
+            <MenuContent>
+              {years.map((year) => {
+                return (
+                  <MenuItem
+                    onClick={() => setSelectedYear(year)}
+                    key={year}
+                    bg={year == selectedYear ? bgColor : ''}
+                    value={year.toString()}>
+                    {year}
+                  </MenuItem>
+                )
+              })}
+            </MenuContent>
+          </MenuRoot>
+        </Box>
+      </Flex>
       <Flex
         my={4}
         gap={4}
