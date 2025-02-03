@@ -1,10 +1,10 @@
 'use client'
 
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@/ui/menu'
-import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
-import { ThemeType, useColorMode } from '../../color-mode'
+import { ThemeType, useColorMode, useColorModeValue } from '../../color-mode'
 
 const getGithubCalendarYears = (
   currentYear: number,
@@ -20,6 +20,7 @@ const getGithubCalendarYears = (
 
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
+  const bgColor = useColorModeValue('gray.100', 'gray.800')
   const [selectedYear, setSelectedYear] = useState(2025)
   const years = getGithubCalendarYears(new Date().getFullYear(), 2018)
 
@@ -30,7 +31,7 @@ export const GithubCalendar = () => {
         <MenuRoot>
           <MenuTrigger asChild>
             <Button variant="outline" size="sm">
-              {selectedYear}
+              <Text>Year:</Text> <Text fontWeight={'bold'}>{selectedYear}</Text>
             </Button>
           </MenuTrigger>
           <MenuContent>
@@ -39,6 +40,7 @@ export const GithubCalendar = () => {
                 <MenuItem
                   onClick={() => setSelectedYear(year)}
                   key={year}
+                  bg={year == selectedYear ? bgColor : ''}
                   value={year.toString()}>
                   {year}
                 </MenuItem>
