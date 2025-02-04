@@ -1,10 +1,10 @@
 'use client'
 
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@/ui/menu'
-import { Box, Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
-import { ThemeType, useColorMode, useColorModeValue } from '../../color-mode'
+import { ThemeType, useColorMode } from '../../color-mode'
+import { MobileYearSelect } from './mobile-year-select'
 
 const getGithubCalendarYears = (
   currentYear: number,
@@ -20,7 +20,7 @@ const getGithubCalendarYears = (
 
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
-  const bgColor = useColorModeValue('gray.100', 'gray.800')
+
   const [selectedYear, setSelectedYear] = useState(2025)
   const years = getGithubCalendarYears(new Date().getFullYear(), 2018)
 
@@ -28,29 +28,11 @@ export const GithubCalendar = () => {
     <>
       <Flex justify={'space-between'}>
         <Heading textStyle={'2xl'}>Github Contributions</Heading>
-        <Box display={{ base: 'block', md: 'none' }}>
-          <MenuRoot>
-            <MenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                <Text>Year:</Text>{' '}
-                <Text fontWeight={'bold'}>{selectedYear}</Text>
-              </Button>
-            </MenuTrigger>
-            <MenuContent>
-              {years.map((year) => {
-                return (
-                  <MenuItem
-                    onClick={() => setSelectedYear(year)}
-                    key={year}
-                    bg={year == selectedYear ? bgColor : ''}
-                    value={year.toString()}>
-                    {year}
-                  </MenuItem>
-                )
-              })}
-            </MenuContent>
-          </MenuRoot>
-        </Box>
+        <MobileYearSelect
+          selectedYear={selectedYear}
+          years={years}
+          setSelectedYear={setSelectedYear}
+        />
       </Flex>
       <Flex
         my={4}
