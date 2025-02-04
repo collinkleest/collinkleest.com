@@ -6,12 +6,9 @@ import {
   GITHUB_REPOS_PER_PAGE,
   GITHUB_USERNAME
 } from '@_constants'
-import {
-  excludedProjects,
-  priorityProjects,
-  priorityProjectsArr
-} from '@_content'
+import { excludedProjects } from '@_content'
 import { IProjectDTO, Repo } from '@_types'
+import { getMoreProjects, repoSorter } from '@_utils'
 import { Box, Heading, SimpleGrid, Skeleton } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { ProjectCard } from './project-card'
@@ -24,34 +21,6 @@ export const Projects = () => {
   )
   const [visibleProjects, setVisibleProjects] = useState<IProjectDTO[]>([])
   const [loading, setLoading] = useState(true)
-
-  const showMoreProjects = () => {
-    const newVisibleProjects = projects.slice(
-      visibleProjects.length,
-      visibleProjects.length + 6
-    )
-    setVisibleProjects([...visibleProjects, ...newVisibleProjects])
-  }
-
-  const repoSorter = (repoA: IProjectDTO, repoB: IProjectDTO) => {
-    const isRepoAPriority = priorityProjects.has(repoA.name)
-    const isRepoBPriority = priorityProjects.has(repoB.name)
-
-    if (isRepoAPriority && isRepoBPriority) {
-      const repoAIndex = priorityProjectsArr.indexOf(repoA.name)
-      const repoBIndex = priorityProjectsArr.indexOf(repoB.name)
-      if (repoBIndex < repoAIndex) {
-        return 1
-      }
-      return -1
-    } else if (isRepoBPriority) {
-      return 1
-    } else if (isRepoAPriority) {
-      return -1
-    }
-
-    return 0
-  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -128,7 +97,11 @@ export const Projects = () => {
       {!loading &&
         visibleProjects &&
         visibleProjects.length !== projects.length && (
-          <ShowMore showMoreProjects={showMoreProjects} />
+          <ShowMore
+            showMoreProjects={() =>
+              setVisibleProjects(getMoreProjects(projects, visibleProjects))
+            }
+          />
         )}
     </>
   )

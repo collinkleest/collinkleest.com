@@ -1,3 +1,7 @@
+import { GITHUB_REPOS_PER_PAGE } from '@_constants'
+import { priorityProjects, priorityProjectsArr } from '@_content'
+import { IProjectDTO } from '@_types'
+
 export const getGithubCalendarYears = (
   currentYear: number,
   endYear: number
@@ -8,4 +12,35 @@ export const getGithubCalendarYears = (
     years.push(currentYear - i)
   }
   return years
+}
+
+export const repoSorter = (repoA: IProjectDTO, repoB: IProjectDTO) => {
+  const isRepoAPriority = priorityProjects.has(repoA.name)
+  const isRepoBPriority = priorityProjects.has(repoB.name)
+
+  if (isRepoAPriority && isRepoBPriority) {
+    const repoAIndex = priorityProjectsArr.indexOf(repoA.name)
+    const repoBIndex = priorityProjectsArr.indexOf(repoB.name)
+    if (repoBIndex < repoAIndex) {
+      return 1
+    }
+    return -1
+  } else if (isRepoBPriority) {
+    return 1
+  } else if (isRepoAPriority) {
+    return -1
+  }
+
+  return 0
+}
+
+export const getMoreProjects = (
+  projects: IProjectDTO[],
+  visibleProjects: IProjectDTO[]
+): IProjectDTO[] => {
+  const newVisibleProjects = projects.slice(
+    visibleProjects.length,
+    visibleProjects.length + GITHUB_REPOS_PER_PAGE
+  )
+  return [...visibleProjects, ...newVisibleProjects]
 }
