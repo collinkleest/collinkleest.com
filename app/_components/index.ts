@@ -1,5 +1,6 @@
 export * from './experience'
 export * from './footer'
+export * from './github'
 export * from './header'
 export * from './intro'
 export * from './links'

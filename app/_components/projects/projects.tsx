@@ -1,5 +1,6 @@
 'use client'
 
+import { GithubCalendar } from '@_components'
 import {
   GITHUB_API_ROOT,
   GITHUB_REPOS_PER_PAGE,
@@ -13,7 +14,6 @@ import {
 import { IProjectDTO, Repo } from '@_types'
 import { Box, Heading, SimpleGrid, Skeleton } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import { GithubCalendar } from '../github/github-calendar'
 import { ProjectCard } from './project-card'
 import { ShowMore } from './show-more'
 
