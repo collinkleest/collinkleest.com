@@ -1,22 +1,12 @@
 'use client'
 
-import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
+import { getGithubCalendarYears } from '@_utils'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 import { useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
 import { MobileYearSelect } from './mobile-year-select'
-
-const getGithubCalendarYears = (
-  currentYear: number,
-  endYear: number
-): number[] => {
-  const numberOfYears = currentYear - endYear
-  const years = []
-  for (let i = 0; i < numberOfYears + 1; i++) {
-    years.push(currentYear - i)
-  }
-  return years
-}
+import { YearSelect } from './year-select'
 
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
@@ -49,27 +39,11 @@ export const GithubCalendar = () => {
             year={selectedYear}
           />
         </Box>
-        <Box
-          display={{ base: 'none', md: 'block' }}
-          h={'10rem'}
-          overflow="hidden"
-          flex="0 0 auto"
-          maxWidth="150px"
-          alignItems="stretch">
-          <VStack maxH={'full'} overflowY={'auto'}>
-            {years.map((year) => {
-              return (
-                <Button
-                  key={year}
-                  variant={year == selectedYear ? 'solid' : 'outline'}
-                  size={'xs'}
-                  onClick={() => setSelectedYear(year)}>
-                  {year}
-                </Button>
-              )
-            })}
-          </VStack>
-        </Box>
+        <YearSelect
+          years={years}
+          setSelectedYear={setSelectedYear}
+          selectedYear={selectedYear}
+        />
       </Flex>
     </>
   )
