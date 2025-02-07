@@ -37,7 +37,6 @@ export const Projects = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    console.log('initialProjectsDisplayCount=' + initialProjectsDisplayCount)
     const fetchData = async () => {
       const nextPattern = /(?<=<)([\S]*)(?=>; rel="Next")/i
       const response = await fetch(url)
