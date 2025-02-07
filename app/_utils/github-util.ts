@@ -1,4 +1,3 @@
-import { GITHUB_REPOS_PER_PAGE } from '@_constants'
 import { priorityProjects, priorityProjectsArr } from '@_content'
 import { IProjectDTO } from '@_types'
 
@@ -36,11 +35,12 @@ export const repoSorter = (repoA: IProjectDTO, repoB: IProjectDTO) => {
 
 export const getMoreProjects = (
   projects: IProjectDTO[],
-  visibleProjects: IProjectDTO[]
+  visibleProjects: IProjectDTO[],
+  numberOfProjects: number
 ): IProjectDTO[] => {
   const newVisibleProjects = projects.slice(
     visibleProjects.length,
-    visibleProjects.length + GITHUB_REPOS_PER_PAGE
+    visibleProjects.length + numberOfProjects
   )
   return [...visibleProjects, ...newVisibleProjects]
 }
