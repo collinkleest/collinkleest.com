@@ -1,4 +1,6 @@
-export const resume = {
+import { IResume } from '../_types/resume.types'
+
+export const resume: IResume = {
   heading: 'Resume',
   mainContentRichText: `My resume is built in LaTex and is from a template called
         <a href="https://github.com/posquit0/Awesome-CV">
