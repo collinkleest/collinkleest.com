@@ -10,7 +10,7 @@ import { NavLinks } from './nav-links'
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <Box borderBottom={'1px solid #eaeaea'}>
+    <Box borderBottom={'1px solid'}>
       <Collapsible.Root>
         <Flex
           mx={{ base: 2, md: 30, lg: 50, xl: 70 }}
@@ -18,9 +18,7 @@ export const Header = () => {
           justify={'between'}
           py={4}>
           <Logo />
-          <Collapsible.Trigger>
-            <MobileToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-          </Collapsible.Trigger>
+          <MobileToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           <NavLinks />
         </Flex>
         <Collapsible.Content>
