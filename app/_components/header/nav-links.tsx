@@ -1,6 +1,5 @@
 import { header } from '@_content'
 import { Box, Button, Stack, Text } from '@chakra-ui/react'
-import { ColorModeButton } from '../../color-mode'
 
 export const NavLinks = () => {
   return (
@@ -20,7 +19,6 @@ export const NavLinks = () => {
           })}
         </Stack>
       </Box>
-      <ColorModeButton display={{ base: 'none', md: 'inline-flex' }} />
     </>
   )
 }
