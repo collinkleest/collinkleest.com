@@ -1,6 +1,6 @@
-import { CloseButton } from '@/ui/close-button'
-import { Box, CollapsibleTrigger, IconButton } from '@chakra-ui/react'
+import { Box, CollapsibleTrigger } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { RiCloseLargeLine } from 'react-icons/ri'
 import { ColorModeButton } from '../../color-mode'
 
 export const MobileToggle = ({
@@ -11,15 +11,11 @@ export const MobileToggle = ({
   setIsOpen: (isOpen: boolean) => void
 }) => {
   return (
-    <Box display={{ base: 'block', md: 'none' }} ml={4}>
-      <ColorModeButton />
+    <Box display={{ base: 'flex', md: 'none' }} ml={4}>
+      <ColorModeButton mr={'2'} />
       <CollapsibleTrigger>
-        {!isOpen && (
-          <IconButton variant={'outline'}>
-            <GiHamburgerMenu onClick={() => setIsOpen(true)} />
-          </IconButton>
-        )}
-        {isOpen && <CloseButton onClick={() => setIsOpen(false)} />}
+        {!isOpen && <GiHamburgerMenu onClick={() => setIsOpen(true)} />}
+        {isOpen && <RiCloseLargeLine onClick={() => setIsOpen(false)} />}
       </CollapsibleTrigger>
     </Box>
   )
