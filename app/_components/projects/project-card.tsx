@@ -6,7 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Flex
+  Flex,
+  Tag
 } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
@@ -42,6 +43,14 @@ export const ProjectCard = (props: IProjectCardProps) => {
             <TbWorldWww />
           </a>
         )}
+        {props.topics &&
+          props.topics.map((topic: string) => {
+            return (
+              <Tag.Root key={topic}>
+                <Tag.Label>{topic}</Tag.Label>
+              </Tag.Root>
+            )
+          })}
       </CardFooter>
     </Card.Root>
   )
