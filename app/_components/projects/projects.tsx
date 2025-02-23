@@ -47,13 +47,14 @@ export const Projects = () => {
         ...projects,
         ...data
           .filter((data) => !data.archived && !excludedProjects.has(data.name))
-          .map((repo) => {
+          .map((repo: Repo) => {
             return {
               name: repo.name,
               description: repo.description,
               url: repo.html_url,
               language: repo.language,
-              liveHomepage: repo.homepage
+              liveHomepage: repo.homepage,
+              topics: repo.topics
             }
           })
       ])
@@ -103,6 +104,7 @@ export const Projects = () => {
                 liveHomepage={project.liveHomepage}
                 url={project.url}
                 language={project.language}
+                topics={project.topics}
               />
             )
           })}

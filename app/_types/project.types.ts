@@ -4,6 +4,7 @@ export interface IProjectDTO {
   url: string
   language: string
   liveHomepage: string
+  topics: string[]
 }
 
 export interface Repo {
@@ -13,4 +14,5 @@ export interface Repo {
   language: string
   homepage: string
   archived: boolean
+  topics: string[]
 }

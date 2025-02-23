@@ -17,6 +17,7 @@ interface IProjectCardProps {
   description: string
   url: string
   liveHomepage: string
+  topics: string[]
 }
 
 export const ProjectCard = (props: IProjectCardProps) => {
