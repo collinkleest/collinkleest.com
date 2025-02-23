@@ -33,7 +33,7 @@ export const Timeline = () => {
   return (
     <>
       <Heading textStyle={'4xl'} my={8}>
-        Experience
+        Work Experience
       </Heading>
       <TimelineRoot variant={'solid'} size="lg" maxWidth={'6xl'}>
         {shownExperience.map((block: IExperienceBlock, index: number) => {
