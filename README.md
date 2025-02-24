@@ -17,6 +17,7 @@ This site is hosted on github pages and can be found at [collinkleest.com](https
 4. [Build](#build)
 5. [Linting](#linting)
 6. [Formatting](#formatting)
+7. [Docs](#docs)
 
 ### Prerequisites
 
@@ -93,3 +94,7 @@ To check if files are up to the prettier standard run the following.
 ```bash
 $ pnpm format:check
 ```
+
+### Docs
+
+![collinkleest.com arch diagram](docs/arch.svg)
