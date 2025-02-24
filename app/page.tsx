@@ -5,7 +5,7 @@ import { Box, Container } from '@chakra-ui/react'
 export default function Page() {
   return (
     <>
-      <Container>
+      <Container maxW={'6xl'}>
         <Box id="about" my={12}>
           <Intro />
         </Box>
