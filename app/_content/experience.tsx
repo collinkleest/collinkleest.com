@@ -8,7 +8,7 @@ export const experience: IExperience = {
     {
       companyName: 'Vanguard',
       timeline: 'Aug 2021 - Present',
-      avatar: <Avatar src={'images/vanguard.png'} />,
+      avatar: <Avatar src={'images/vanguard.png'} alt="Vanguard Logo" />,
       roles: [
         {
           roleTitle: 'Software Technical Lead - Americas FAS',
@@ -45,7 +45,7 @@ export const experience: IExperience = {
     {
       companyName: 'Pfizer',
       timeline: 'Jun 2020 - Dec 2020',
-      avatar: <Avatar src={'images/pfizer.jpg'} />,
+      avatar: <Avatar src={'images/pfizer.jpg'} alt="Pfizer Logo" />,
       roles: [
         {
           roleTitle: 'Associate Software Engineer',
@@ -70,7 +70,7 @@ export const experience: IExperience = {
     {
       companyName: 'Penn State College of Information Sciences and Technology',
       timeline: 'Jan 2019 - May 2020',
-      avatar: <Avatar src={'images/pennstate.png'} />,
+      avatar: <Avatar src={'images/pennstate.png'} alt="Penn State Logo" />,
       roles: [
         {
           roleTitle: 'Java Learning Assistant',
@@ -106,7 +106,7 @@ export const experience: IExperience = {
     {
       companyName: 'Rajant Coporation',
       timeline: 'May 2019 - Aug 2019',
-      avatar: <Avatar src={'images/rajant.png'} />,
+      avatar: <Avatar src={'images/rajant.png'} alt="Rajant Logo" />,
       roles: [
         {
           roleTitle: 'Systems Engineer Intern',
