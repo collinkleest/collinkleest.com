@@ -53,6 +53,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
                 href={props.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`Github Link for ${props.url}`}
                 onClick={(e) => e.stopPropagation()}>
                 <Box
                   as={FaGithub}
@@ -66,6 +67,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
                   href={props.liveHomepage}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={`Live link for ${props.liveHomepage}`}
                   onClick={(e) => e.stopPropagation()}>
                   <Box
                     as={TbWorldWww}
