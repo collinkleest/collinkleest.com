@@ -10,15 +10,18 @@ export const metadata: Metadata = {
   applicationName: 'collinkleest.com',
   referrer: 'origin-when-cross-origin',
   keywords: [
+    'Collin',
+    'Kleest',
+    'Tech Lead',
     'Collin Kleest',
     'Portfolio',
     'Personal Portfolio',
     'Software Engineer',
-    'Tech Lead',
-    'Developer',
-    'Next.js',
-    'React',
-    'JavaScript'
+    'Collin Kleest Software Engineer',
+    'Collin Kleest Tech Lead',
+    'Collin Kleest website',
+    'Collin Kleest portfolio',
+    'collinkleest.com'
   ],
   openGraph: {
     title: 'Collin Kleest - Tech Lead',
