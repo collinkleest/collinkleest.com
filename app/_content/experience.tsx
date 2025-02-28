@@ -1,6 +1,12 @@
 import { Avatar } from '@_components'
 import { IExperience } from '@_types'
+import { Image as ChakraImage } from '@chakra-ui/react'
+import NextImage from 'next/image'
 import { FaFileCode, FaServer } from 'react-icons/fa'
+import pennStateLogo from '../../public/images/pennstate.png'
+import pfizerLogo from '../../public/images/pfizer.png'
+import rajantLogo from '../../public/images/rajant.png'
+import vanguardLogo from '../../public/images/vanguard.png'
 
 export const experience: IExperience = {
   title: 'Experience',
@@ -9,6 +15,11 @@ export const experience: IExperience = {
       companyName: 'Vanguard',
       timeline: 'Aug 2021 - Present',
       avatar: <Avatar src={'images/vanguard.png'} alt="Vanguard Logo" />,
+      connector: (
+        <ChakraImage borderRadius="full" fit="cover" asChild>
+          <NextImage src={vanguardLogo} alt="Vanguard Logo" />
+        </ChakraImage>
+      ),
       roles: [
         {
           roleTitle: 'Software Technical Lead - Americas FAS',
@@ -46,6 +57,11 @@ export const experience: IExperience = {
       companyName: 'Pfizer',
       timeline: 'Jun 2020 - Dec 2020',
       avatar: <Avatar src={'images/pfizer.jpg'} alt="Pfizer Logo" />,
+      connector: (
+        <ChakraImage borderRadius="full" fit="cover" asChild>
+          <NextImage src={pfizerLogo} alt="Pfizer Logo" />
+        </ChakraImage>
+      ),
       roles: [
         {
           roleTitle: 'Associate Software Engineer',
@@ -71,6 +87,11 @@ export const experience: IExperience = {
       companyName: 'Penn State College of Information Sciences and Technology',
       timeline: 'Jan 2019 - May 2020',
       avatar: <Avatar src={'images/pennstate.png'} alt="Penn State Logo" />,
+      connector: (
+        <ChakraImage borderRadius="full" fit="cover" asChild>
+          <NextImage src={pennStateLogo} alt="Penn State Logo" />
+        </ChakraImage>
+      ),
       roles: [
         {
           roleTitle: 'Java Learning Assistant',
@@ -107,6 +128,11 @@ export const experience: IExperience = {
       companyName: 'Rajant Coporation',
       timeline: 'May 2019 - Aug 2019',
       avatar: <Avatar src={'images/rajant.png'} alt="Rajant Logo" />,
+      connector: (
+        <ChakraImage borderRadius="full" fit="cover" asChild>
+          <NextImage src={rajantLogo} alt="Rajant Logo" />
+        </ChakraImage>
+      ),
       roles: [
         {
           roleTitle: 'Systems Engineer Intern',

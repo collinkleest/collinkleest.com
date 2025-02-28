@@ -13,6 +13,7 @@ export interface IExperienceBlock {
   timeline: string
   roles: IExperienceRole[]
   avatar?: ReactElement
+  connector?: ReactElement
 }
 
 export interface IExperience {

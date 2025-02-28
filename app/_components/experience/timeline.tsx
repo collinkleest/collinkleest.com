@@ -39,7 +39,9 @@ export const Timeline = () => {
         {shownExperience.map((block: IExperienceBlock, index: number) => {
           return (
             <TimelineItem key={index}>
-              <TimelineConnector>{block.avatar}</TimelineConnector>
+              <TimelineConnector>
+                {block.connector ?? block.avatar}
+              </TimelineConnector>
               <TimelineContent>
                 <TimelineTitle textStyle={'lg'}>
                   {block.companyName}
