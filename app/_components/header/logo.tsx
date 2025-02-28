@@ -1,7 +1,10 @@
 'use client'
 
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Image as ChakraImage } from '@chakra-ui/react'
+import NextImage from 'next/image'
 import { useEffect, useState } from 'react'
+import logoDark from '../../../public/images/CK_Logo_500x500.png'
+import logoLight from '../../../public/images/CK_Logo_500x500_WHITE.png'
 import { useColorMode } from '../../color-mode'
 
 export const Logo = () => {
@@ -16,19 +19,13 @@ export const Logo = () => {
     <Box marginEnd={'auto'}>
       <a href="#">
         {currentMode == 'dark' ? (
-          <Image
-            rounded="md"
-            src="images/CK_Logo_500x500_WHITE.png"
-            alt="Collin Kleest Logo"
-            boxSize="30px"
-          />
+          <ChakraImage rounded="md" boxSize="30px" asChild>
+            <NextImage src={logoLight} alt="Collin Kleest Logo Light" />
+          </ChakraImage>
         ) : (
-          <Image
-            rounded="md"
-            src="images/CK_Logo_500x500.png"
-            alt="Collin Kleest Logo"
-            boxSize="30px"
-          />
+          <ChakraImage rounded="md" boxSize="30px" asChild>
+            <NextImage src={logoDark} alt="Collin Kleest Logo Dark" />
+          </ChakraImage>
         )}
       </a>
     </Box>

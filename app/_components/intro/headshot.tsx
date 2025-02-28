@@ -1,14 +1,12 @@
 import { IIntroHeadshot } from '@_types'
-import { Image } from '@chakra-ui/react'
+import { Image as ChakraImage } from '@chakra-ui/react'
+import NextImage from 'next/image'
+import headshot from '../../../public/images/headshot.jpeg'
 
 export const Headshot = (props: { headshot: IIntroHeadshot }) => {
   return (
-    <Image
-      src={props.headshot.src}
-      boxSize="250px"
-      borderRadius="full"
-      fit="cover"
-      alt={props.headshot.alt}
-    />
+    <ChakraImage boxSize="250px" borderRadius="full" fit="cover" asChild>
+      <NextImage src={headshot} alt={props.headshot.alt} />
+    </ChakraImage>
   )
 }
