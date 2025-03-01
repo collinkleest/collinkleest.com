@@ -35,5 +35,6 @@ export const footer: IFooter = {
       icon: <TfiEmail />
     }
   ],
-  copyright: 'All rights reserved'
+  copyright: `Copyright © Collin Kleest ${new Date().getFullYear()} All rights
+        Reserved`
 }
