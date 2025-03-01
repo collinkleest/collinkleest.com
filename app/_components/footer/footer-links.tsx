@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react'
 import { FaDev, FaGithub, FaLinkedin, FaSpotify } from 'react-icons/fa'
 import { TfiEmail } from 'react-icons/tfi'
 
-// TODO: abstract into content
 export const FooterLinks = () => {
   return (
     <Box display={'flex'} gap={4}>
