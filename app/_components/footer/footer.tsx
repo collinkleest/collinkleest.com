@@ -16,7 +16,7 @@ export const Footer = () => {
           py={4}>
           <BuiltWith />
           <FooterLinks footerLinks={content.footer.footerLinks} />
-          <Copyright />
+          <Copyright copyrightText={content.footer.copyright} />
         </Flex>
       </Box>
     </>
