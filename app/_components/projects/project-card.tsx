@@ -30,11 +30,6 @@ export const ProjectCard = (props: IProjectCardProps) => {
   return (
     <Card.Root h="100%">
       <Box
-        as={'a'}
-        // @ts-ignore
-        href={props.liveHomepage ?? props.url}
-        target="_blank"
-        rel="noopener noreferrer"
         transition="all 0.3s ease-in-out"
         _hover={{
           transform: 'translate(10px, -10px)', // Moves the card up slightly
@@ -43,8 +38,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
         _focus={{ outline: 'none' }}
         cursor="pointer"
         h="100%">
-        <CardHeader
-          onClick={() => handleCardClick(props.url, props.liveHomepage)}>
+        <CardHeader>
           <Flex gap={2} align={'center'}>
             {langMappings[props?.language?.toLowerCase()]}
             {props?.language}
@@ -53,8 +47,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
                 href={props.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={`Github Link for ${props.url}`}
-                onClick={(e) => e.stopPropagation()}>
+                title={`Github Link for ${props.url}`}>
                 <Box
                   as={FaGithub}
                   transition="all 0.2s ease-in-out"
@@ -67,8 +60,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
                   href={props.liveHomepage}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={`Live link for ${props.liveHomepage}`}
-                  onClick={(e) => e.stopPropagation()}>
+                  title={`Live link for ${props.liveHomepage}`}>
                   <Box
                     as={TbWorldWww}
                     transition="all 0.2s ease-in-out"
@@ -80,8 +72,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
             </Flex>
           </Flex>
         </CardHeader>
-        <CardBody
-          onClick={() => handleCardClick(props.url, props.liveHomepage)}>
+        <CardBody>
           <CardTitle>{props.name}</CardTitle>
           <CardDescription>{props.description}</CardDescription>
         </CardBody>
