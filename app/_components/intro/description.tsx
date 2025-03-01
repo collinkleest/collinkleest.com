@@ -1,15 +1,15 @@
 import { IIntroDescription } from '@_types'
-import { Highlight, Text } from '@chakra-ui/react'
+import { Heading, Highlight, Text } from '@chakra-ui/react'
 
 export const Description = (props: { description: IIntroDescription }) => {
   return (
     <>
-      <Text textStyle="6xl" fontWeight={'bold'}>
+      <Heading textStyle="6xl" fontWeight={'bold'} as={'h1'}>
         {props.description.name}
-      </Text>
-      <Text textStyle="2xl" fontWeight={'semibold'}>
+      </Heading>
+      <Heading textStyle="2xl" fontWeight={'semibold'} as={'h2'}>
         {props.description.title}
-      </Text>
+      </Heading>
       <Text textStyle="md">
         <Highlight
           query={[
