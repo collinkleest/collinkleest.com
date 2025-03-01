@@ -4,7 +4,7 @@ import { Button, Flex, Heading, Text } from '@chakra-ui/react'
 export const Resume = () => {
   return (
     <>
-      <Heading textStyle={'4xl'} my={8}>
+      <Heading textStyle={'4xl'} my={8} as={'h3'}>
         {content.resume.heading}
       </Heading>
       <Text

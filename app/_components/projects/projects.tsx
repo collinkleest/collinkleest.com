@@ -80,7 +80,7 @@ export const Projects = () => {
 
   return (
     <>
-      <Heading textStyle={'4xl'} my={8}>
+      <Heading textStyle={'4xl'} my={8} as={'h3'}>
         Projects
       </Heading>
       <Box my={12}>

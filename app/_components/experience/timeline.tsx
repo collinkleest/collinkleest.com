@@ -32,7 +32,7 @@ export const Timeline = () => {
 
   return (
     <>
-      <Heading textStyle={'4xl'} my={8}>
+      <Heading textStyle={'4xl'} my={8} as={'h3'}>
         Work Experience
       </Heading>
       <TimelineRoot variant={'solid'} size="lg" maxWidth={'6xl'}>
@@ -43,7 +43,7 @@ export const Timeline = () => {
                 {block.connector ?? block.avatar}
               </TimelineConnector>
               <TimelineContent>
-                <TimelineTitle textStyle={'lg'}>
+                <TimelineTitle textStyle={'lg'} as={'h4'}>
                   {block.companyName}
                 </TimelineTitle>
                 <TimelineDescription>{block.timeline}</TimelineDescription>
