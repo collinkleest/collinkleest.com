@@ -1,7 +1,8 @@
+import content from '@_content'
 import { Box, Flex } from '@chakra-ui/react'
 import { BuiltWith } from './built-with'
-import { FooterLinks } from './footer-links'
 import { Copyright } from './copyright'
+import { FooterLinks } from './footer-links'
 
 export const Footer = () => {
   return (
@@ -14,7 +15,7 @@ export const Footer = () => {
           gap={{ base: 4, md: 14 }}
           py={4}>
           <BuiltWith />
-          <FooterLinks />
+          <FooterLinks footerLinks={content.footer.footerLinks} />
           <Copyright />
         </Flex>
       </Box>

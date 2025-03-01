@@ -1,5 +1,6 @@
 export { default } from './content'
 export * from './experience'
+export * from './footer'
 export * from './header'
 export * from './metadata'
 export * from './project'

@@ -1,4 +1,5 @@
 import { IExperience } from './experience.types'
+import { IFooter } from './footer.types'
 import { IHeader } from './header.types'
 import { IIntro } from './intro.types'
 import { ILinkList } from './links.types'
@@ -10,4 +11,5 @@ export interface IContent {
   experience: IExperience
   linkList: ILinkList
   resume: IResume
+  footer: IFooter
 }

@@ -1,5 +1,6 @@
 export * from './content.types'
 export * from './experience.types'
+export * from './footer.types'
 export * from './header.types'
 export * from './intro.types'
 export * from './links.types'
