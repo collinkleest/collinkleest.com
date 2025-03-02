@@ -7,6 +7,11 @@ updates:
     directory: '/' # Location of package manifests
     schedule:
       interval: 'weekly'
+    reviewers:
+      - 'collinkleest'
+    assignees:
+      - 'collinkleest'
+    prefix: 'chore(npm-deps): '
 
   - package-ecosystem: 'docker'
     # Look for a `Dockerfile` in the `root` directory
@@ -14,3 +19,8 @@ updates:
     # Check for updates once a week
     schedule:
       interval: 'weekly'
+    reviewers:
+      - 'collinkleest'
+    assignees:
+      - 'collinkleest'
+    prefix: 'chore(docker-deps): '
