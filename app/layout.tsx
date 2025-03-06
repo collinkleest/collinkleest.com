@@ -1,6 +1,7 @@
 import { Provider } from './provider'
 // These styles apply to every route in the application
 import { Footer, Header } from '@_components'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Inter } from 'next/font/google'
 import './global.css'
 export { metadata } from '@_content'
@@ -17,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={inter.className} lang="en" suppressHydrationWarning>
+      <GoogleAnalytics gaId='G-ETMYQZGLMH' />
       <head>
         <link
           rel="icon"
