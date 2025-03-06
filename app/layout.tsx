@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={inter.className} lang="en" suppressHydrationWarning>
-      <GoogleAnalytics gaId='G-ETMYQZGLMH' />
+      <GoogleAnalytics gaId="G-ETMYQZGLMH" />
       <head>
         <link
           rel="icon"

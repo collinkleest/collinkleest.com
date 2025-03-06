@@ -1,4 +1,7 @@
+'use client'
+
 import content from '@_content'
+import { sentAnalyticEvent } from '@_utils'
 import { Button, Flex, Heading, Text } from '@chakra-ui/react'
 
 export const Resume = () => {
@@ -14,12 +17,28 @@ export const Resume = () => {
       />
       <Flex gap={{ base: 2, md: 6 }} wrap={'wrap'}>
         <a href={content.resume.resumeHref} target="_blank">
-          <Button size={'sm'} variant={'outline'}>
+          <Button
+            onClick={() =>
+              sentAnalyticEvent({
+                buttonTitle: 'resumeNewTab',
+                buttonText: content.resume.viewInTabBtnText
+              })
+            }
+            size={'sm'}
+            variant={'outline'}>
             {content.resume.viewInTabBtnText}
           </Button>
         </a>
         <a href={content.resume.resumeHref} download>
-          <Button size={'sm'} variant={'outline'}>
+          <Button
+            onClick={() =>
+              sentAnalyticEvent({
+                buttonTitle: 'downloadResume',
+                buttonText: content.resume.downloadBtnText
+              })
+            }
+            size={'sm'}
+            variant={'outline'}>
             {content.resume.downloadBtnText}
           </Button>
         </a>
