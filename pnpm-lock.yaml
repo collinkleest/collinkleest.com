@@ -39,7 +39,7 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-github-calendar:
-        specifier: ^4.5.6
+        specifier: 4.5.6
         version: 4.5.6(react@19.0.0)
       react-icons:
         specifier: ^5.5.0
