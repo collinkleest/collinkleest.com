@@ -13,25 +13,23 @@ on:
 jobs:
   # ci job
   ci:
-    name: Continious Integration
+    name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9.15.3
-
-      - name: Use Node.js 23.6.0
+      - name: Use Node.js 23.9.0
         uses: actions/setup-node@v4
         with:
-          node-version: 23.6.0
+          node-version: 23.9.0
           cache: 'pnpm'
+      
+      - name: Install PNPM
+        run: corepack enable && corepack prepare pnpm@10.5.2 --activate
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Check Code Formatting
         run: pnpm format:check
