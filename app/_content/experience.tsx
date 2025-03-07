@@ -1,4 +1,3 @@
-import { Avatar } from '@_components'
 import { IExperience } from '@_types'
 import { Image as ChakraImage } from '@chakra-ui/react'
 import NextImage from 'next/image'
@@ -7,6 +6,7 @@ import pennStateLogo from '../../public/images/pennstate.png'
 import pfizerLogo from '../../public/images/pfizer.png'
 import rajantLogo from '../../public/images/rajant.png'
 import vanguardLogo from '../../public/images/vanguard.png'
+import { Avatar } from '../_components/experience'
 
 export const experience: IExperience = {
   title: 'Experience',

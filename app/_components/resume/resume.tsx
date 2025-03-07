@@ -4,7 +4,6 @@ import { AnalyticButton } from '@_components'
 import content from '@_content'
 import { Flex, Heading, Text } from '@chakra-ui/react'
 
-
 export const Resume = () => {
   return (
     <>
@@ -19,7 +18,7 @@ export const Resume = () => {
       <Flex gap={{ base: 2, md: 6 }} wrap={'wrap'}>
         <a href={content.resume.resumeHref} target="_blank">
           <AnalyticButton
-            ctaTitle='resumeNewTab'
+            ctaTitle="resumeNewTab"
             ctaHref={content.resume.resumeHref}
             size={'sm'}
             variant={'outline'}>
@@ -28,7 +27,7 @@ export const Resume = () => {
         </a>
         <a href={content.resume.resumeHref} download>
           <AnalyticButton
-            ctaTitle='downloadResume'
+            ctaTitle="downloadResume"
             ctaHref={content.resume.resumeHref}
             size={'sm'}
             variant={'outline'}>
