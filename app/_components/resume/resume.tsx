@@ -1,7 +1,7 @@
 'use client'
 
 import content from '@_content'
-import { sentAnalyticEvent } from '@_utils'
+import { sendCallToActionAnalyticEvent } from '@_utils'
 import { Button, Flex, Heading, Text } from '@chakra-ui/react'
 
 export const Resume = () => {
@@ -19,9 +19,10 @@ export const Resume = () => {
         <a href={content.resume.resumeHref} target="_blank">
           <Button
             onClick={() =>
-              sentAnalyticEvent({
-                buttonTitle: 'resumeNewTab',
-                buttonText: content.resume.viewInTabBtnText
+              sendCallToActionAnalyticEvent({
+                ctaTitle: 'resumeNewTab',
+                ctaText: content.resume.viewInTabBtnText,
+                ctaHref: content.resume.resumeHref
               })
             }
             size={'sm'}
@@ -32,9 +33,10 @@ export const Resume = () => {
         <a href={content.resume.resumeHref} download>
           <Button
             onClick={() =>
-              sentAnalyticEvent({
-                buttonTitle: 'downloadResume',
-                buttonText: content.resume.downloadBtnText
+              sendCallToActionAnalyticEvent({
+                ctaTitle: 'downloadResume',
+                ctaText: content.resume.downloadBtnText,
+                ctaHref: content.resume.resumeHref
               })
             }
             size={'sm'}
