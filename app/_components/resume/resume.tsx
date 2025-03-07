@@ -1,8 +1,9 @@
 'use client'
 
+import { AnalyticButton } from '@_components'
 import content from '@_content'
-import { sendCallToActionAnalyticEvent } from '@_utils'
-import { Button, Flex, Heading, Text } from '@chakra-ui/react'
+import { Flex, Heading, Text } from '@chakra-ui/react'
+
 
 export const Resume = () => {
   return (
@@ -17,32 +18,22 @@ export const Resume = () => {
       />
       <Flex gap={{ base: 2, md: 6 }} wrap={'wrap'}>
         <a href={content.resume.resumeHref} target="_blank">
-          <Button
-            onClick={() =>
-              sendCallToActionAnalyticEvent({
-                ctaTitle: 'resumeNewTab',
-                ctaText: content.resume.viewInTabBtnText,
-                ctaHref: content.resume.resumeHref
-              })
-            }
+          <AnalyticButton
+            ctaTitle='resumeNewTab'
+            ctaHref={content.resume.resumeHref}
             size={'sm'}
             variant={'outline'}>
             {content.resume.viewInTabBtnText}
-          </Button>
+          </AnalyticButton>
         </a>
         <a href={content.resume.resumeHref} download>
-          <Button
-            onClick={() =>
-              sendCallToActionAnalyticEvent({
-                ctaTitle: 'downloadResume',
-                ctaText: content.resume.downloadBtnText,
-                ctaHref: content.resume.resumeHref
-              })
-            }
+          <AnalyticButton
+            ctaTitle='downloadResume'
+            ctaHref={content.resume.resumeHref}
             size={'sm'}
             variant={'outline'}>
             {content.resume.downloadBtnText}
-          </Button>
+          </AnalyticButton>
         </a>
       </Flex>
     </>

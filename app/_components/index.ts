@@ -1,3 +1,4 @@
+export * from './analytics'
 export * from './experience'
 export * from './footer'
 export * from './github'
