@@ -3,15 +3,12 @@
 name: collinkleest.com portfolio workflow
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ['master']
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches: ['*'] # Runs on any branch
+  pull_request:  # Also runs on PRs
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs:
-  # ci job
   ci:
     name: Continuous Integration
     runs-on: ubuntu-latest
