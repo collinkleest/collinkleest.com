@@ -36,7 +36,7 @@
     "node": ">=18.7"
   },
   "dependencies": {
-    "@chakra-ui/react": "3.12.0",
+    "@chakra-ui/react": "3.13.0",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
     "@mui/icons-material": "6.4.7",
@@ -50,7 +50,7 @@
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@chakra-ui/cli": "3.12.0",
+    "@chakra-ui/cli": "3.13.0",
     "@types/node": "22.13.10",
     "@types/react": "19.0.10",
     "autoprefixer": "10.4.21",
@@ -67,6 +67,11 @@
     "standard-version": "9.5.0",
     "ts-node": "10.9.2",
     "typescript": "5.8.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.25.0"
+    }
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
