@@ -1,6 +1,6 @@
 'use client'
 
-import { GithubCalendar } from '@_components'
+import { GithubCalendar, PaginateProjects } from '@_components'
 import {
   GITHUB_API_ROOT,
   GITHUB_REPOS_PER_PAGE_DESKTOP,
@@ -9,12 +9,7 @@ import {
 } from '@_constants'
 import { excludedProjects } from '@_content'
 import { IProjectDTO, Repo } from '@_types'
-import {
-  createArray,
-  getLessProjects,
-  getMoreProjects,
-  repoSorter
-} from '@_utils'
+import { createArray, repoSorter } from '@_utils'
 import {
   Box,
   Heading,
@@ -24,7 +19,6 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { ProjectCard } from './project-card'
-import { ShowMoreOrLess } from './show-more'
 
 export const Projects = () => {
   const [projects, setProjects] = useState<IProjectDTO[]>([])
@@ -117,24 +111,11 @@ export const Projects = () => {
         </SimpleGrid>
       )}
       {!loading && visibleProjects && (
-        <ShowMoreOrLess
+        <PaginateProjects
+          projects={projects}
+          visibleProjects={visibleProjects}
           initialDisplayCount={initialProjectsDisplayCount}
-          visibleProjectsCount={visibleProjects.length}
-          projectsCount={projects.length}
-          showLessProjects={() =>
-            setVisibleProjects(
-              getLessProjects(visibleProjects, initialProjectsDisplayCount)
-            )
-          }
-          showMoreProjects={() =>
-            setVisibleProjects(
-              getMoreProjects(
-                projects,
-                visibleProjects,
-                initialProjectsDisplayCount
-              )
-            )
-          }
+          setVisibleProjects={setVisibleProjects}
         />
       )}
     </>
