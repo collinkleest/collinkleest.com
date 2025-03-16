@@ -9,7 +9,12 @@ import {
 } from '@_constants'
 import { excludedProjects } from '@_content'
 import { IProjectDTO, Repo } from '@_types'
-import { createArray, getMoreProjects, repoSorter } from '@_utils'
+import {
+  createArray,
+  getLessProjects,
+  getMoreProjects,
+  repoSorter
+} from '@_utils'
 import {
   Box,
   Heading,
@@ -19,7 +24,7 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { ProjectCard } from './project-card'
-import { ShowMore } from './show-more'
+import { ShowMoreOrLess } from './show-more'
 
 export const Projects = () => {
   const [projects, setProjects] = useState<IProjectDTO[]>([])
@@ -111,21 +116,27 @@ export const Projects = () => {
           })}
         </SimpleGrid>
       )}
-      {!loading &&
-        visibleProjects &&
-        visibleProjects.length !== projects.length && (
-          <ShowMore
-            showMoreProjects={() =>
-              setVisibleProjects(
-                getMoreProjects(
-                  projects,
-                  visibleProjects,
-                  initialProjectsDisplayCount
-                )
+      {!loading && visibleProjects && (
+        <ShowMoreOrLess
+          initialDisplayCount={initialProjectsDisplayCount}
+          visibleProjectsCount={visibleProjects.length}
+          projectsCount={projects.length}
+          showLessProjects={() =>
+            setVisibleProjects(
+              getLessProjects(visibleProjects, initialProjectsDisplayCount)
+            )
+          }
+          showMoreProjects={() =>
+            setVisibleProjects(
+              getMoreProjects(
+                projects,
+                visibleProjects,
+                initialProjectsDisplayCount
               )
-            }
-          />
-        )}
+            )
+          }
+        />
+      )}
     </>
   )
 }
