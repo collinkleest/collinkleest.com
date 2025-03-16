@@ -44,3 +44,16 @@ export const getMoreProjects = (
   )
   return [...visibleProjects, ...newVisibleProjects]
 }
+
+export const getLessProjects = (
+  visibleProjects: IProjectDTO[],
+  initialDisplayCount: number
+): IProjectDTO[] => {
+  const projectsLength = visibleProjects.length
+  const projectCountRemainder = projectsLength % initialDisplayCount
+  const endIndex =
+    projectCountRemainder === 0
+      ? projectsLength - initialDisplayCount
+      : projectsLength - projectCountRemainder
+  return [...visibleProjects.slice(0, endIndex)]
+}
