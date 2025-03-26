@@ -2,6 +2,7 @@ export interface IIntroDescription {
   name: string
   title: string
   blurb: string
+  blurbQuery?: string | string[]
 }
 
 export interface IIntroHeadshot {

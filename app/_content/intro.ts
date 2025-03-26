@@ -5,7 +5,13 @@ export const intro: IIntro = {
     name: 'Collin Kleest',
     title: 'Software Engineer & Technical Lead',
     blurb:
-      'Hello, I’m Collin Kleest, currently a Software Technical Lead at Vanguard. With over four years of experience in software engineering and technical leadership, I specialize in full-stack development and excel at solving challenging problems. I am currently seeking opportunities in the Dallas-Fort Worth area.'
+      'Hello, I’m Collin Kleest, currently a Software Technical Lead at Vanguard located in the Dallas-Fort Worth area. With over four years of experience in software engineering and technical leadership, I specialize in full-stack development and excel at solving challenging problems.',
+    blurbQuery: [
+      'Software Technical Lead',
+      'four',
+      'full-stack development',
+      'Dallas-Fort Worth'
+    ]
   },
   headshot: {
     src: 'images/headshot.jpeg',

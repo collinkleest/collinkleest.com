@@ -12,12 +12,7 @@ export const Description = (props: { description: IIntroDescription }) => {
       </Heading>
       <Text textStyle="md">
         <Highlight
-          query={[
-            'Software Technical Lead',
-            'four',
-            'full-stack development',
-            'Dallas-Fort Worth'
-          ]}
+          query={props.description.blurbQuery}
           styles={{ px: '0.5', bg: 'gray.muted' }}
           matchAll={true}>
           {props.description.blurb}
