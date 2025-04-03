@@ -13,10 +13,8 @@ RUN corepack prepare pnpm@latest --activate && pnpm install --frozen-lockfile
 # Copy the rest of the app
 COPY . .
 
-# Build the Next.js app and export it as static files
-ENV DEPLOY_ENV=github-pages
+# Build the Next.js app exporting it to /out folder
 RUN pnpm build
-RUN pnpm next export
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
