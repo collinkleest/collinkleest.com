@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@chakra-ui/react']
   },
   basePath: DEPLOY_ENV === 'github-pages' ? '/collinkleest.com' : '',
-  output: DEPLOY_ENV === 'github-pages' ? 'export' : undefined
+  output: 'export',
+  images: {
+    unoptimized: true
+  }
 }
 
 export default nextConfig

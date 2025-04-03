@@ -1,6 +1,6 @@
 {
   "name": "collinkleest.com",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "description": "Personal Portfolio Website for Collin Kleest",
   "main": "index.js",
   "scripts": {
@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "3.15.0",
-    "@types/node": "22.13.14",
-    "@types/react": "19.0.12",
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
     "autoprefixer": "10.4.21",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
