@@ -6,7 +6,7 @@ export const resume: IResume = {
         <a href="https://github.com/posquit0/Awesome-CV">
           <b>Awesome-CV</b>
         </a>
-        . My resume is available for download in PDF format or you can view it
+        . My resume is available for download in PDF format or can be viewed
         in a new tab.`,
   viewInTabBtnText: 'View resume in new tab',
   downloadBtnText: 'Download Resume PDF',
