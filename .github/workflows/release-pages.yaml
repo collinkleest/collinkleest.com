@@ -1,4 +1,4 @@
-# .github/workflows/ci.yaml
+# .github/workflows/release-pages.yaml
 
 name: collinkleest.com github-pages release
 

@@ -1,0 +1,32 @@
+# .github/workflows/activate.yaml
+
+name: collinkleest.com activate
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose blue or green to activate (defaults to blue)'
+        required: true
+        default: 'blue'
+        type: choice
+        options:
+          - blue
+          - green
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Application
+        uses: collinkleest/remote-release@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          command: |
+            curl -X PATCH http://localhost:8001/upstreams/collinkleest-website-upstream/targets/collinkleest-website-${{ github.event.inputs.environment == 'blue' && 'green' || 'blue' }}:80 \
+                -d "weight=0"
+            curl -X PATCH http://localhost:8001/upstreams/collinkleest-website-upstream/targets/collinkleest-website-${{ github.event.inputs.environment }}:80 \
+                -d "weight=100"

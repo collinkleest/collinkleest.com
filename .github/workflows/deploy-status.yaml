@@ -1,19 +1,12 @@
-# .github/workflows/release.yaml
+# .github/workflows/deploy-status.yaml
 
-name: collinkleest.com remote release
+name: collinkleest.com deployment status
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths:
-      - public/docs/resume.pdf
 
 jobs:
-  release:
+  status:
     runs-on: ubuntu-latest
     steps:
       - name: Start Application
@@ -24,5 +17,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           command: |
-            docker compose down
-            docker compose up --build -d
+            curl -X GET http://localhost:8001/upstreams/collinkleest-website-upstream/targets/ | grep :100
