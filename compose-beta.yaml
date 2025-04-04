@@ -12,7 +12,7 @@ services:
     networks:
       - kong
     ports:
-      - 3001:80
+      - 3002:80
     restart: always
     labels:
       - 'collinkleest.com'
@@ -25,7 +25,7 @@ services:
     networks:
       - kong
     ports:
-      - 3002:80
+      - 3003:80
     restart: always
     labels:
       - 'collinkleest.com'
