@@ -1,0 +1,33 @@
+name: collinkleest.com
+
+networks:
+  kong:
+    driver: bridge
+    name: kong-net
+
+services:
+  webapp-blue:
+    container_name: collinkleest-website-blue
+    build: .
+    networks:
+      - kong
+    ports:
+      - 3000:80
+    restart: always
+    labels:
+      - 'collinkleest.com'
+      - 'nextjs'
+      - 'env=blue'
+
+  webapp-green:
+    container_name: collinkleest-website-green
+    build: .
+    networks:
+      - kong
+    ports:
+      - 3001:80
+    restart: always
+    labels:
+      - 'collinkleest.com'
+      - 'nextjs'
+      - 'env=green'
