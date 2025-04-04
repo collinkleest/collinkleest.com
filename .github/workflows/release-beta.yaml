@@ -1,0 +1,30 @@
+# .github/workflows/release-beta.yaml
+
+name: collinkleest.com remote release
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose blue or green deployment (defaults to blue)'
+        required: true
+        default: 'blue'
+        type: choice
+        options:
+          - blue
+          - green
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Application
+        uses: collinkleest/remote-release@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          command: |
+            docker compose down
+            docker-compose -f compose-beta.yaml up -d --build webapp-${{ github.event.inputs.environment }}
