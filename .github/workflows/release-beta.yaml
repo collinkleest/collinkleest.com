@@ -1,6 +1,6 @@
 # .github/workflows/release-beta.yaml
 
-name: collinkleest.com remote release
+name: collinkleest.com remote release beta (green/blue)
 
 on:
   workflow_dispatch:
@@ -26,5 +26,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           command: |
-            docker compose down
-            docker-compose -f compose-beta.yaml up -d --build webapp-${{ github.event.inputs.environment }}
+            docker compose -f compose-beta.yaml stop webapp-${{ github.event.inputs.environment }}
+            docker rm -f collinkleest-website-${{ github.event.inputs.environment }}
+            docker compose -f compose-beta.yaml up -d --build webapp-${{ github.event.inputs.environment }}
