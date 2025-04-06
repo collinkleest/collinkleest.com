@@ -6,14 +6,28 @@ networks:
     name: kong-net
 
 services:
-  webapp:
-    container_name: collinkleest-website
+  webapp-blue:
+    container_name: collinkleest-website-blue
     build: .
     networks:
       - kong
     ports:
-      - 3000:80 # Map host port 3000 to container port 80 (Nginx)
+      - 3002:80
     restart: always
     labels:
       - 'collinkleest.com'
       - 'nextjs'
+      - 'env=blue'
+
+  webapp-green:
+    container_name: collinkleest-website-green
+    build: .
+    networks:
+      - kong
+    ports:
+      - 3003:80
+    restart: always
+    labels:
+      - 'collinkleest.com'
+      - 'nextjs'
+      - 'env=green'
