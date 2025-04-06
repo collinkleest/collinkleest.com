@@ -1,16 +1,18 @@
 # .github/workflows/release.yaml
 
-name: collinkleest.com remote release
+name: collinkleest.com release (green/blue)
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths:
-      - public/docs/resume.pdf
+    inputs:
+      environment:
+        description: 'Choose blue or green deployment (defaults to blue)'
+        required: true
+        default: 'blue'
+        type: choice
+        options:
+          - blue
+          - green
 
 jobs:
   release:
@@ -24,5 +26,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           command: |
-            docker compose down
-            docker compose up --build -d
+            docker compose stop webapp-${{ github.event.inputs.environment }}
+            docker rm -f collinkleest-website-${{ github.event.inputs.environment }}
+            docker compose up -d --build webapp-${{ github.event.inputs.environment }}
