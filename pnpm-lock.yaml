@@ -42,8 +42,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-github-calendar:
-        specifier: 4.5.6
-        version: 4.5.6(react@19.1.0)
+        specifier: 4.5.7
+        version: 4.5.7(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.0)
@@ -3791,8 +3791,8 @@ packages:
     resolution: {integrity: sha512-RmkhL8CAyCRPXCE28MMH0z2PNWQBNk2Q09ZdxM9IOOXwxwZbN+qbWaatPkdkWIKL2ZVDImrN/pK5HTRz2PcS4g==}
     engines: {node: '>= 0.8'}
 
-  react-activity-calendar@2.7.10:
-    resolution: {integrity: sha512-O6ev2JxbsbmF7hPpRCkiXxQ+vGwXS5iUVwOCqtvlJnGhpyJ3ZJap7/qfIZA0WZcDj4gpQh2Dcvkmwh3yBXRrPQ==}
+  react-activity-calendar@2.7.12:
+    resolution: {integrity: sha512-OzVconQ5LA/uF2ZN3zDeWZb4UxjOmGr1ymaGCSEAMLSzwjzP7ojdyZs8DyV7jcV+rZ+lmwp6BTpBJqdW8ehXyw==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -3801,13 +3801,13 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-error-boundary@5.0.0:
-    resolution: {integrity: sha512-tnjAxG+IkpLephNcePNA7v6F/QpWLH8He65+DmedchDwg162JZqx4NmbXj0mlAYVVEd81OW7aFhmbsScYfiAFQ==}
+  react-error-boundary@6.0.0:
+    resolution: {integrity: sha512-gdlJjD7NWr0IfkPlaREN2d9uUZUlksrfOx7SX62VRerwXbMY6ftGCIZua1VG1aXFNOimhISsTq+Owp725b9SiA==}
     peerDependencies:
       react: '>=16.13.1'
 
-  react-github-calendar@4.5.6:
-    resolution: {integrity: sha512-wuLJ+4MDBnli+YWUCprmK+e4ltRaMaB1P4VnYCrbATzFUq46ZDvrXbjQ8uf5aXPbWW8X+ZzSBgGOXGDWgkl0Sw==}
+  react-github-calendar@4.5.7:
+    resolution: {integrity: sha512-R1VBhSMM6NTeKkpvlHaAnIue1XPHhGHx6RpnyIfT7p1lq9PpNsIgwYGZ5I8FhX+J/F4ps+DAPMr+qdYj7lzQWQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -6554,7 +6554,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.0
       cosmiconfig: 7.1.0
       resolve: 1.22.10
 
@@ -9136,7 +9136,7 @@ snapshots:
       iconv-lite: 0.6.3
       unpipe: 1.0.0
 
-  react-activity-calendar@2.7.10(react@19.1.0):
+  react-activity-calendar@2.7.12(react@19.1.0):
     dependencies:
       date-fns: 4.1.0
       react: 19.1.0
@@ -9146,16 +9146,16 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-error-boundary@5.0.0(react@19.1.0):
+  react-error-boundary@6.0.0(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.27.1
       react: 19.1.0
 
-  react-github-calendar@4.5.6(react@19.1.0):
+  react-github-calendar@4.5.7(react@19.1.0):
     dependencies:
       react: 19.1.0
-      react-activity-calendar: 2.7.10(react@19.1.0)
-      react-error-boundary: 5.0.0(react@19.1.0)
+      react-activity-calendar: 2.7.12(react@19.1.0)
+      react-error-boundary: 6.0.0(react@19.1.0)
 
   react-icons@5.5.0(react@19.1.0):
     dependencies:
