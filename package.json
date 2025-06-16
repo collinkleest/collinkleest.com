@@ -52,7 +52,7 @@
   "devDependencies": {
     "@chakra-ui/cli": "3.16.1",
     "@types/node": "22.15.21",
-    "@types/react": "19.1.2",
+    "@types/react": "19.1.8",
     "autoprefixer": "10.4.21",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
