@@ -11,7 +11,7 @@ import { YearSelect } from './year-select'
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
 
-  const [selectedYear, setSelectedYear] = useState(2025)
+  const [selectedYear, setSelectedYear] = useState(2026)
   const years = getGithubCalendarYears(new Date().getFullYear(), 2018)
 
   return (
