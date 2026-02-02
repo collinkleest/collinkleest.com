@@ -1,9 +1,10 @@
 'use client'
 
+import { GITHUB_DEFAULT_YEAR, GITHUB_START_YEAR } from '@_constants'
 import { getGithubCalendarYears } from '@_utils'
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import { useState } from 'react'
-import GitHubCalendar from 'react-github-calendar'
+import { GitHubCalendar } from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
 import { MobileYearSelect } from './mobile-year-select'
 import { YearSelect } from './year-select'
@@ -11,8 +12,11 @@ import { YearSelect } from './year-select'
 export const GithubCalendar = () => {
   const { colorMode } = useColorMode()
 
-  const [selectedYear, setSelectedYear] = useState(2025)
-  const years = getGithubCalendarYears(new Date().getFullYear(), 2018)
+  const [selectedYear, setSelectedYear] = useState(GITHUB_DEFAULT_YEAR)
+  const years = getGithubCalendarYears(
+    new Date().getFullYear(),
+    GITHUB_START_YEAR
+  )
 
   return (
     <>
