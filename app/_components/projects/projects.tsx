@@ -40,7 +40,7 @@ export const Projects = () => {
       const nextPattern = /(?<=<)([\S]*)(?=>; rel="Next")/i
       const response = await fetch(url)
       const linkHeader = response.headers.get('Link')
-      const pagesRemaining = linkHeader && linkHeader.includes(`rel=\"next\"`)
+      const pagesRemaining = linkHeader && linkHeader.includes('rel="next"')
       const data = (await response.json()) as Repo[]
       setProjects([
         ...projects,
@@ -75,7 +75,6 @@ export const Projects = () => {
     }
 
     fetchData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url])
 
   return (

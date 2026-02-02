@@ -23,10 +23,6 @@ interface IProjectCardProps {
 }
 
 export const ProjectCard = (props: IProjectCardProps) => {
-  const handleCardClick = (githubLink: string, liveSiteLink?: string) => {
-    const url = liveSiteLink ?? githubLink
-    window.open(url, '_blank')
-  }
   return (
     <Card.Root h="100%">
       <Box

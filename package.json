@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "3.31.0",
+    "@eslint/js": "9.39.2",
     "@types/node": "25.2.0",
     "@types/react": "19.2.10",
     "autoprefixer": "10.4.24",
@@ -65,7 +66,8 @@
     "prettier": "3.8.1",
     "standard-version": "9.5.0",
     "ts-node": "10.9.2",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.54.0"
   },
   "pnpm": {
     "overrides": {
