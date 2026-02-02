@@ -3,7 +3,7 @@
 import { getGithubCalendarYears } from '@_utils'
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import { useState } from 'react'
-import GitHubCalendar from 'react-github-calendar'
+import { GitHubCalendar } from 'react-github-calendar'
 import { ThemeType, useColorMode } from '../../color-mode'
 import { MobileYearSelect } from './mobile-year-select'
 import { YearSelect } from './year-select'
