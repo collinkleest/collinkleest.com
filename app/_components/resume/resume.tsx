@@ -16,7 +16,7 @@ export const Resume = () => {
         dangerouslySetInnerHTML={{ __html: content.resume.mainContentRichText }}
       />
       <Flex gap={{ base: 2, md: 6 }} wrap={'wrap'}>
-        <a href={content.resume.resumeHref} target="_blank">
+        <a href={content.resume.resumeHref} rel="noreferrer" target="_blank">
           <AnalyticButton
             ctaTitle="resumeNewTab"
             ctaHref={content.resume.resumeHref}
