@@ -1,4 +1,5 @@
 import { IIntro } from '@_types'
+import headshot from '../../public/images/headshot-v2.jpeg'
 
 export const intro: IIntro = {
   description: {
@@ -14,7 +15,8 @@ export const intro: IIntro = {
     ]
   },
   headshot: {
-    src: 'images/headshot.jpeg',
+    image: headshot,
+    src: 'images/headshot-v2.jpeg',
     alt: 'Collin Kleest Headshot'
   }
 }

@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 export interface IIntroDescription {
   name: string
   title: string
@@ -6,6 +8,7 @@ export interface IIntroDescription {
 }
 
 export interface IIntroHeadshot {
+  image: StaticImageData
   src: string
   alt: string
 }

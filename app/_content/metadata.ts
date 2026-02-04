@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://collinkleest.com',
     images: [
       {
-        url: 'https://collinkleest.com/images/headshot.jpeg',
+        url: 'https://collinkleest.com/images/headshot-v2.jpeg',
         type: 'image/jpeg',
         alt: 'Headshot of Collin Kleest'
       }
