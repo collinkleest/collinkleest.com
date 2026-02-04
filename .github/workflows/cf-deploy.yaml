@@ -9,6 +9,7 @@ on:
         description: 'The name of the cloudflare project'
         required: true
         type: string
+        default: 'collinkleest-portfolio'
 
 jobs:
   cf-ci:
