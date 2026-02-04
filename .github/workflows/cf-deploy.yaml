@@ -41,6 +41,7 @@ jobs:
           path: ./out
 
   deploy:
+    name: deploy release ${{ github.ref_name }}
     needs: cf-ci
     runs-on: ubuntu-latest
     steps:
