@@ -1,0 +1,60 @@
+# .github/workflows/cf-deploy.yaml
+
+name: collinkleest.com cf-deploy portfolio workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      cloudflare_project_name:
+        description: 'The name of the cloudflare project'
+        required: true
+        type: string
+
+jobs:
+  cf-ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cf-ci
+          path: ./out
+
+  deploy:
+    name: deploy release ${{ github.ref_name }}
+    needs: cf-ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cf-ci
+          path: out/
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=${{ inputs.cloudflare_project_name }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
