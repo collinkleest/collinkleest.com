@@ -22,8 +22,19 @@ export const experience: IExperience = {
       ),
       roles: [
         {
+          roleTitle: 'Software Technical Lead - Wealth Management',
+          roleTimeline: 'Apr 2025 - Present',
+          avatar: <FaFileCode />,
+          roleBullets: [
+            'Led full-stack serverless architecture & delivery using React, TypeScript, AWS Lambda, PostgreSQL + Prisma ORM',
+            'Designed & built AWS Glue ETL pipelines and asynchronous event-driven architecture for scalable, decoupled data processing & builds.',
+            'Architected and implemented native application search engine, significantly improving data discoverability and UX.',
+            'Directed incremental feature delivery and stakeholder alignment while driving technical roadmap and execution'
+          ]
+        },
+        {
           roleTitle: 'Software Technical Lead - Americas FAS',
-          roleTimeline: 'Aug 2023 - Present',
+          roleTimeline: 'Aug 2023 - Apr 2025',
           avatar: <FaServer />,
           roleBullets: [
             'Oversee the technical delivery of a full stack team using AEM and Angular, managing Vanguard Americas FAS secure and public sites.',
