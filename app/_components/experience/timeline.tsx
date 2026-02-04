@@ -46,6 +46,9 @@ export const Timeline = () => {
                 <TimelineTitle textStyle={'lg'} as={'h4'}>
                   {block.companyName}
                 </TimelineTitle>
+                {block.location && (
+                  <TimelineDescription>{block.location}</TimelineDescription>
+                )}
                 <TimelineDescription>{block.timeline}</TimelineDescription>
                 <TimelineRoot variant={'solid'} size={'lg'}>
                   {block.roles.map((role: IExperienceRole, index: number) => {
@@ -59,9 +62,18 @@ export const Timeline = () => {
                             {role.roleTitle}
                           </TimelineTitle>
                           {block.roles.length > 1 && (
-                            <TimelineDescription>
-                              {role.roleTimeline}
-                            </TimelineDescription>
+                            <>
+                              {role.roleLocation && (
+                                <TimelineDescription>
+                                  {role.roleLocation}
+                                </TimelineDescription>
+                              )}
+                              {role.roleTimeline && (
+                                <TimelineDescription>
+                                  {role.roleTimeline}
+                                </TimelineDescription>
+                              )}
+                            </>
                           )}
                           <List.Root>
                             {role.roleBullets.map((bullet, index) => {

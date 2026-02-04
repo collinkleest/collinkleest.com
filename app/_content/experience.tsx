@@ -8,6 +8,8 @@ import rajantLogo from '../../public/images/rajant.png'
 import vanguardLogo from '../../public/images/vanguard.png'
 import { Avatar } from '../_components/experience'
 
+const malvern = 'Malvern, PA'
+
 export const experience: IExperience = {
   title: 'Experience',
   experienceBlocks: [
@@ -24,6 +26,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Software Technical Lead - Wealth Management',
           roleTimeline: 'Apr 2025 - Present',
+          roleLocation: 'Dallas-Fort Worth, TX',
           avatar: <FaFileCode />,
           roleBullets: [
             'Led full-stack serverless architecture & delivery using React, TypeScript, AWS Lambda, PostgreSQL + Prisma ORM',
@@ -35,6 +38,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Software Technical Lead - Americas FAS',
           roleTimeline: 'Aug 2023 - Apr 2025',
+          roleLocation: malvern,
           avatar: <FaServer />,
           roleBullets: [
             'Oversee the technical delivery of a full stack team using AEM and Angular, managing Vanguard Americas FAS secure and public sites.',
@@ -45,6 +49,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Software Engineer - Technology Leadership Program',
           roleTimeline: 'Aug 2021 - Aug 2023',
+          roleLocation: malvern,
           roleBullets: [
             'Enhanced Scalability and Modularity: Implemented micro frontend architecture using module federation, scaling portfolio and fund comparison tools for 20,000+ portfolios.',
             'Developed Secure Portals: Led development of serverless portals for Canadian financial advisors and multi-country data lake integration, leveraging Angular, AWS Firehose, Glue, and Python for robust security and optimized data processing.',
@@ -56,6 +61,7 @@ export const experience: IExperience = {
         {
           roleTitle: 'Application Developer Intern',
           roleTimeline: 'Jun 2021 - Aug 2021',
+          roleLocation: malvern,
           avatar: <FaFileCode />,
           roleBullets: [
             'Contributed to a full-stack Angular-based College Cost Estimator web app that helps advisors and clients get an estimated cost of college for their children.',
@@ -68,6 +74,7 @@ export const experience: IExperience = {
       companyName: 'Pfizer',
       timeline: 'Jun 2020 - Dec 2020',
       avatar: <Avatar src={'images/pfizer.jpg'} alt="Pfizer Logo" />,
+      location: 'Collegville, PA',
       connector: (
         <ChakraImage borderRadius="full" fit="cover" asChild>
           <NextImage src={pfizerLogo} alt="Pfizer Logo" />
@@ -98,6 +105,7 @@ export const experience: IExperience = {
       companyName: 'Penn State College of Information Sciences and Technology',
       timeline: 'Jan 2019 - May 2020',
       avatar: <Avatar src={'images/pennstate.png'} alt="Penn State Logo" />,
+      location: 'State College, PA',
       connector: (
         <ChakraImage borderRadius="full" fit="cover" asChild>
           <NextImage src={pennStateLogo} alt="Penn State Logo" />
@@ -139,6 +147,7 @@ export const experience: IExperience = {
       companyName: 'Rajant Coporation',
       timeline: 'May 2019 - Aug 2019',
       avatar: <Avatar src={'images/rajant.png'} alt="Rajant Logo" />,
+      location: malvern,
       connector: (
         <ChakraImage borderRadius="full" fit="cover" asChild>
           <NextImage src={rajantLogo} alt="Rajant Logo" />
