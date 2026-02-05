@@ -1,43 +1,38 @@
-# .github/workflows/ci.yaml
+# .github/workflows/build.yaml
 
-name: collinkleest.com portfolio workflow
+name: collinkleest.com build
 
 on:
   push:
-    branches: '**' # Runs on any branch
-  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+    branches: '**'
+  workflow_dispatch:
 
 jobs:
-  ci:
-    name: Continuous Integration
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 23.6.0
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 23.6.0
+          node-version: 24
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
         with:
-          version: 10.6.2
+          version: 10
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check Code Formatting
-        run: pnpm format:check
-
-      - name: Lint
-        run: pnpm lint
-
       - name: Build
         run: pnpm build
+
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: portfolio-build
           path: ./out
