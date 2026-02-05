@@ -1,6 +1,6 @@
 # .github/workflows/build.yaml
 
-name: collinkleest.com build
+name: build
 
 on:
   push:

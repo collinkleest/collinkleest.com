@@ -1,6 +1,6 @@
 # .github/workflows/deploy.yaml
 
-name: collinkleest.com deploy
+name: deploy
 
 on:
   workflow_dispatch:
