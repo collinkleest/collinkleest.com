@@ -52,7 +52,7 @@
   "devDependencies": {
     "@chakra-ui/cli": "3.32.0",
     "@eslint/js": "10.0.1",
-    "@types/node": "25.2.2",
+    "@types/node": "25.2.3",
     "@types/react": "19.2.13",
     "autoprefixer": "10.4.24",
     "commitizen": "4.3.1",
