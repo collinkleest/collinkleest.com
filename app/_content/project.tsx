@@ -33,10 +33,10 @@ export const excludedProjects = new Set([
 export const priorityProjects = new Set([
   'collinkleest.com',
   'liteproxy',
+  'livscore',
   'HAXcms',
   'fpl.app',
-  'cf-ddns',
-  'JavaFit'
+  'cf-ddns'
 ])
 
 export const priorityProjectsArr = [...priorityProjects]
