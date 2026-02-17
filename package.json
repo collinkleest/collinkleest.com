@@ -1,6 +1,6 @@
 {
   "name": "collinkleest.com",
-  "version": "1.1.23",
+  "version": "1.2.0",
   "description": "Personal Portfolio Website for Collin Kleest",
   "main": "index.js",
   "scripts": {
